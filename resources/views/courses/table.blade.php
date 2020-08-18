@@ -4,7 +4,7 @@
             <tr>
 {{--                <th>User Id</th>--}}
 {{--        <th>Category Id</th>--}}
-        <th>Title</th>
+                <th></th> <th></th>
 {{--        <th>Sub Title</th>--}}
 {{--        <th>Description</th>--}}
 {{--        <th>About Instructor</th>--}}
@@ -31,8 +31,8 @@
 {{--                <td>{{ $course->user_id }}</td>--}}
 {{--            <td>{{ $course->category_id }}</td>--}}
                 <td>{{ $course->photo }}</td>
-            <h2>{{ $course->title }}</h2>
-           {{ $course->sub_title }}</td>
+                <td> <h3>{{ $course->title }}</h3>
+           {{ $course->sub_title }}   {{$course->user['name']}}</td>
 {{--            <td>{{ $course->description }}</td>--}}
 {{--            <td>{{ $course->about_instructor }}</td>--}}
 {{--            <td>{{ $course->playlist_url }}</td>--}}
@@ -44,11 +44,12 @@
 {{--            <td>{{ $course->what_will_students_learn }}</td>--}}
 {{--            <td>{{ $course->target_students }}</td>--}}
 {{--            <td>{{ $course->requirements }}</td>--}}
-            <td>{{ $course->discount_price }}</td>
-            <td>{{ $course->actual_price }}</td>
+            <td>${{ $course->discount_price }}</td>
+            <td>${{ $course->actual_price }}</td>
 {{--            <td>{{ $course->view_count }}</td>--}}
 {{--            <td>{{ $course->subscriber_count }}</td>--}}
                 <td>
+                    @if(Auth::user()->role_id<3||$course->user_id==Auth::user()->id)
                     {!! Form::open(['route' => ['courses.destroy', $course->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>
                         <a href="{{ route('courses.show', [$course->id]) }}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-eye-open"></i></a>
@@ -56,6 +57,7 @@
                         {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!}
                     </div>
                     {!! Form::close() !!}
+                        @endif
                 </td>
             </tr>
         @endforeach

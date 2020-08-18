@@ -5,6 +5,7 @@ namespace App\Models;
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+
 /**
  * Class Course
  * @package App\Models
@@ -120,5 +121,9 @@ class Course extends Model
     public function category()
     {
         return $this->belongsTo('App\Models\Category');
+    }
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User');
     }
 }

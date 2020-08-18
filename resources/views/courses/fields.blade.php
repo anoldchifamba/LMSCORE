@@ -1,23 +1,22 @@
 <!-- User Id Field -->
-{{--<div class="form-group col-sm-6">--}}
-{{--    {!! Form::label('user_id', 'User Id:') !!}--}}
-{{--    {!! Form::number('user_id', null, ['class' => 'form-control']) !!}--}}
-{{--</div>--}}
+<div class="form-group col-sm-6">
+    {!! Form::label('user_id', 'User Id:') !!}
+    {!! Form::number('user_id', null, ['class' => 'form-control']) !!}
+</div>
 
-@if(Auth::user()->role_id<3)
-<!-- Admin Status Field -->
+{{--@if(Auth::user()->role_id<3)--}}
+{{--<!-- Admin Status Field -->--}}
 <div class="form-group col-sm-6">
     {!! Form::label('admin_status', 'Admin Status:') !!}
-{{--    {!! Form::number('admin_status', null, ['class' => 'form-control']) !!}--}}
-    <select class="form-control" name="admin_status" id="admin_status" style="height:40px; ">
+    {!! Form::number('admin_status', null, ['class' => 'form-control']) !!}
+{{--    <select class="form-control" name="admin_status" id="admin_status" style="height:40px; ">--}}
 
-        <option value="1">On</option>
-        <option value="0">Off</option>
+{{--        <option value="1">On</option><option value="1">Off</option>--}}
+{{--        @endforeach--}}
 
-
-    </select>
+{{--    </select>--}}
 </div>
-@endif
+{{--@endif--}}
 <!-- Title Field -->
 <div class="form-group col-sm-12 col-lg-8">
     {!! Form::label('title', 'Title:') !!}
@@ -29,7 +28,6 @@
 {{--    {!! Form::text('category_id', null, ['class' => 'form-control']) !!}\--}}
 
     <select class="form-control" name="category_id" id="category_id" style="height:40px; ">
-
         @foreach ($categories as $category)
             <option value="{{ $category->id}}">{{ $category->name}}</option>
             @endforeach
@@ -82,20 +80,9 @@
 </div>
 
 <!-- Creator Status Field -->
-{{--<div class="form-group col-sm-6">--}}
-{{--    {!! Form::label('creator_status', 'Creator Status:') !!}--}}
-{{--    {!! Form::number('creator_status', null, ['class' => 'form-control']) !!}--}}
-{{--</div>--}}
 <div class="form-group col-sm-6">
     {!! Form::label('creator_status', 'Creator Status:') !!}
-    {{--    {!! Form::number('admin_status', null, ['class' => 'form-control']) !!}--}}
-    <select class="form-control" name="creator_status" id="creator_status" style="height:40px; ">
-
-        <option value="1">On</option>
-        <option value="0">Off</option>
-
-
-    </select>
+    {!! Form::number('creator_status', null, ['class' => 'form-control']) !!}
 </div>
 
 
@@ -137,10 +124,10 @@
 </div>
 
 <!-- Subscriber Count Field -->
-{{--<div class="form-group col-sm-6">--}}
-{{--    {!! Form::label('subscriber_count', 'Subscriber Count:') !!}--}}
-{{--    {!! Form::number('subscriber_count', null, ['class' => 'form-control']) !!}--}}
-{{--</div>--}}
+<div class="form-group col-sm-6">
+    {!! Form::label('subscriber_count', 'Subscriber Count:') !!}
+    {!! Form::number('subscriber_count', null, ['class' => 'form-control']) !!}
+</div>
 
 <!-- Submit Field -->
 <div class="form-group col-sm-8">
