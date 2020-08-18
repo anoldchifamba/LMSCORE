@@ -18,7 +18,7 @@
 
 
 
-    <div class="form-group w-100 small text-muted">
+<div class="form-group w-100 small text-muted">
     {!! Form::label('view_count', 'View Count:') !!}
     <p>{{ $category->view_count }}</p>
 </div>

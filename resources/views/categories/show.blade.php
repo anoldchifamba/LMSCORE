@@ -2,10 +2,10 @@
 
 @section('content')
     <section class="content-header">
-       <h1>
-           <div class="form-group">
+        <h1>
+            <div class="form-group">
                 {{--    {!! Form::label('name', 'Name:') !!}--}}
-             {{ $category->name }}
+                {{ $category->name }}
             </div>
         </h1>
     </section>
@@ -14,13 +14,13 @@
             <div class="box-body">
 
                 <div class="row" style="padding-left: 20px">
-{{--                    this function is used to view category--}}
+                    {{--                    this function is used to view category--}}
                     @include('categories.show_fields')
-{{--                    we want to show or view the courses under the category we have offered--}}
+                    {{--                    we want to show or view the courses under the category we have offered--}}
                     <h2 class="text-center w-100">Courses under  {{ $category->name }}</h2>
                     @include('courses.table')
 
-{{--                    <a href="{{ route('categories.index') }}" class="btn btn-default">Back</a>--}}
+                    {{--                    <a href="{{ route('categories.index') }}" class="btn btn-default">Back</a>--}}
                 </div>
             </div>
         </div>

@@ -36,8 +36,8 @@ class CreateCoursesTable extends Migration
             $table->double('discount_price',10,2);
             $table->double('actual_price',10,2);
 // stats
-            $table->integer('view_count')->default(0);
-            $table->integer('subscriber_count')->default(0);
+            $table->integer('view_count')->nullable();
+            $table->integer('subscriber_count')->nullable();;
 
             $table->softDeletes();
 

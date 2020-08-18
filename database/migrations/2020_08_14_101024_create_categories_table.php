@@ -17,7 +17,7 @@ class CreateCategoriesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->longText('description')->nullable();
-            $table->integer('view_count')->default(0);
+            $table->integer('view_count')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

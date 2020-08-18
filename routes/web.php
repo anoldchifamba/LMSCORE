@@ -43,3 +43,5 @@ Route::resource('views', 'ViewsController');
 Route::resource('roles', 'RoleController');
 
 Route::resource('coupons', 'CouponController');
+
+Route::resource('catergories', 'CatergoryController');

@@ -7,6 +7,7 @@ use App\Http\Requests\UpdateUserRequest;
 use App\Repositories\UserRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
+use Auth;
 use Flash;
 use Illuminate\Support\Facades\DB;
 use Prettus\Repository\Criteria\RequestCriteria;
@@ -57,7 +58,7 @@ class UserController extends AppBaseController
     public function store(CreateUserRequest $request)
     {
         $input = $request->all();
-
+        $input['user_id']=Auth::user()->id;
         $user = $this->userRepository->create($input);
 
         Flash::success('User saved successfully.');

@@ -35,7 +35,7 @@ class Course extends Model
     use SoftDeletes;
 
     public $table = 'courses';
-    
+
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 
@@ -114,5 +114,11 @@ class Course extends Model
         'subscriber_count' => 'required'
     ];
 
-    
+    /**
+     * @param int $user_id
+     */
+    public function category()
+    {
+        return $this->belongsTo('App\Models\Category');
+    }
 }

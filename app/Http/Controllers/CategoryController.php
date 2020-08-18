@@ -83,6 +83,7 @@ class CategoryController extends AppBaseController
             return redirect(route('categories.index'));
         }
 
+
 //        3  now we want to increment the viws when ever we refresh the page so we import facades  the it use the id ot identify
         DB::table('categories')->where('id',$id)->increment('view_count');
 
@@ -90,11 +91,10 @@ class CategoryController extends AppBaseController
 
         $courses=Course::where('category_id',$category->id)->get();
 
-       return view('categories.show')          //    passing two variables to be shwn on categorypage
-            ->with('category', $category)
+        return view('categories.show')          //    passing two variables to be shwn on categorypage
+        ->with('category', $category)
             ->with('courses', $courses);
     }
-
     /**
      * Show the form for editing the specified Category.
      *

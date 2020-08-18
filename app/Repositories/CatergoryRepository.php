@@ -2,19 +2,19 @@
 
 namespace App\Repositories;
 
-use App\Models\Category;
+use App\Models\Catergory;
 use InfyOm\Generator\Common\BaseRepository;
 
 /**
- * Class CategoryRepository
+ * Class CatergoryRepository
  * @package App\Repositories
- * @version August 17, 2020, 12:31 pm UTC
+ * @version August 17, 2020, 12:30 pm UTC
  *
- * @method Category findWithoutFail($id, $columns = ['*'])
- * @method Category find($id, $columns = ['*'])
- * @method Category first($columns = ['*'])
+ * @method Catergory findWithoutFail($id, $columns = ['*'])
+ * @method Catergory find($id, $columns = ['*'])
+ * @method Catergory first($columns = ['*'])
 */
-class CategoryRepository extends BaseRepository
+class CatergoryRepository extends BaseRepository
 {
     /**
      * @var array
@@ -30,6 +30,6 @@ class CategoryRepository extends BaseRepository
      **/
     public function model()
     {
-        return Category::class;
+        return Catergory::class;
     }
 }

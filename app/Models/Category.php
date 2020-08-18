@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 /**
  * Class Category
  * @package App\Models
- * @version August 14, 2020, 1:07 pm UTC
+ * @version August 17, 2020, 12:31 pm UTC
  *
  * @property string name
  * @property string description
@@ -52,8 +52,7 @@ class Category extends Model
      * @var array
      */
     public static $rules = [
-        'name' => 'required',
-        'view_count' => 'required'
+        'name' => 'required'
     ];
 
     

@@ -4,12 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateCourseRequest;
 use App\Http\Requests\UpdateCourseRequest;
+use App\Models\Category;
 use App\Repositories\CourseRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
+
 
 class CourseController extends AppBaseController
 {
@@ -43,7 +47,8 @@ class CourseController extends AppBaseController
      */
     public function create()
     {
-        return view('courses.create');
+        $categories=Category::all();
+        return view('courses.create')->with('categories',$categories);
     }
 
     /**
@@ -56,7 +61,7 @@ class CourseController extends AppBaseController
     public function store(CreateCourseRequest $request)
     {
         $input = $request->all();
-
+        $input['user_id']=Auth::user()->id;
         $course = $this->courseRepository->create($input);
 
         Flash::success('Course saved successfully.');
@@ -80,6 +85,9 @@ class CourseController extends AppBaseController
 
             return redirect(route('courses.index'));
         }
+
+//        3  now we want to increment the viws when ever we refresh the page so we import facades  the it use the id ot identify
+        DB::table('categories')->where('id',$id)->increment('view_count');
 
         return view('courses.show')->with('course', $course);
     }
