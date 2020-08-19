@@ -8,7 +8,7 @@ use InfyOm\Generator\Common\BaseRepository;
 /**
  * Class CourseRepository
  * @package App\Repositories
- * @version August 17, 2020, 11:31 am UTC
+ * @version August 19, 2020, 7:34 am UTC
  *
  * @method Course findWithoutFail($id, $columns = ['*'])
  * @method Course find($id, $columns = ['*'])

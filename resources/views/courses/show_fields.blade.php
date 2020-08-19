@@ -6,17 +6,17 @@
 
 <!-- Title Field -->
 <div class="form-group col-xs-12">
-    {!! Form::label('title', 'Title:') !!}
+{{--    {!! Form::label('title', 'Title:') !!}--}}
     <h3>{{ $course->title }}</h3>
 
-{{--    {!! Form::label('sub_title', 'Sub Title:') !!}--}}
+    {{--    {!! Form::label('sub_title', 'Sub Title:') !!}--}}
     <p>{{ $course->sub_title }}</p>
     <div class="text-muted">
         @if($course->subscriber_count >0)
             |Students :{{number_format($course->subscriber_count)}}
         @endif
         @if($course->view_count >0)
-            |Students :{{number_format($course->view_count)}}
+            |Students viewed :{{number_format($course->view_count)}}
 
         @endif
     </div>
@@ -27,11 +27,11 @@
     <div class="form-group col-md-6">
         {!! Form::label('creator_status', 'Creator Status:') !!}
         <p>@if( $course->creator_status ==1)
-                        On<a class="btn btn-danger btn sm"></a>
-               @else
+                On<a class="btn btn-danger btn sm"></a>
+            @else
 
-            Off
-               @endif
+                Off
+            @endif
         </p>
     </div>
 
@@ -50,7 +50,7 @@
 <!-- User Id Field -->
 <div class="form-group col-md-6">
     {!! Form::label('user_id', 'Author:') !!}
-{{--    <p>{{ $course->user_id }}</p>--}}
+    {{--    <p>{{ $course->user_id }}</p>--}}
     <p>{{$course->user['name']}}</p>
 </div>
 
@@ -58,6 +58,19 @@
 <div class="form-group col-md-6">
     {!! Form::label('category_id', 'Category Id:') !!}
     <p><a href="/categories/{{$course->category['id']}}">{{ $course->category['name'] }}</a></p>
+</div>
+
+
+<!-- Discount Price Field -->
+<div class="form-group  col-md-6">
+    {!! Form::label('discount_price', 'Discount Price:') !!}
+    <p>$ {{ $course->discount_price }}</p>
+</div>
+
+<!-- Actual Price Field -->
+<div class="form-group  col-md-6">
+    {!! Form::label('actual_price', 'Actual Price:') !!}
+    <strike><p>$ {{ $course->actual_price }}</p></strike>
 </div>
 <!-- Updated At Field -->
 <div class="form-group  col-md-6">
@@ -125,23 +138,13 @@
     <p>{{ $course->requirements }}</p>
 </div>
 
-<!-- Discount Price Field -->
-<div class="form-group">
-    {!! Form::label('discount_price', 'Discount Price:') !!}
-    <p>{{ $course->discount_price }}</p>
-</div>
 
-<!-- Actual Price Field -->
-<div class="form-group">
-    {!! Form::label('actual_price', 'Actual Price:') !!}
-    <p>{{ $course->actual_price }}</p>
-</div>
 
 <!-- View Count Field -->
-<div class="form-group">
-    {!! Form::label('view_count', 'View Count:') !!}
-    <p>{{ $course->view_count }}</p>
-</div>
+{{--<div class="form-group">--}}
+{{--    {!! Form::label('view_count', 'View Count:') !!}--}}
+{{--    <p>{{ $course->view_count }}</p>--}}
+{{--</div>--}}
 
 <!-- Subscriber Count Field -->
 {{--<div class="form-group">--}}

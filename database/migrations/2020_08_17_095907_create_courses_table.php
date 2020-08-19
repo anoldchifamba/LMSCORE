@@ -17,9 +17,9 @@ class CreateCoursesTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->nullable();
 //            create course
-            $table->integer('category_id');
-            $table->longText('title');
-            $table->longText('sub_title')->nullable();//php laravel;
+            $table->integer('category_id')->nullable();
+            $table->string('title');
+            $table->string('sub_title')->nullable();//php laravel;
             $table->longText('description')->nullable();
             $table->longText('about_instructor')->nullable();
             $table->string('playlist_url')->nullable();

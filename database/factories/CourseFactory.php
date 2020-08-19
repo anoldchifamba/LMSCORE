@@ -10,8 +10,8 @@ $factory->define(Course::class, function (Faker $faker) {
     return [
         'user_id' => $faker->randomDigitNotNull,
         'category_id' => $faker->randomDigitNotNull,
-        'title' => $faker->text,
-        'sub_title' => $faker->text,
+        'title' => $faker->word,
+        'sub_title' => $faker->word,
         'description' => $faker->text,
         'about_instructor' => $faker->text,
         'playlist_url' => $faker->word,

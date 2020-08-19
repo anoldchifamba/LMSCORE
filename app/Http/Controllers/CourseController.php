@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\AppBaseController;
 use App\Http\Requests\CreateCourseRequest;
 use App\Http\Requests\UpdateCourseRequest;
 use App\Models\Category;
 use Illuminate\Database\Eloquent\Model;
 
 use App\Repositories\CourseRepository;
-use App\Http\Controllers\AppBaseController;
+//use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Auth;
@@ -89,7 +90,7 @@ class CourseController extends AppBaseController
         }
 
 //        3  now we want to increment the viws when ever we refresh the page so we import facades  the it use the id ot identify
-        DB::table('categories')->where('id',$id)->increment('view_count');
+        DB::table('courses')->where('id',$id)->increment('view_count');
 
         return view('courses.show')->with('course', $course);
     }
