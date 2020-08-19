@@ -31,8 +31,22 @@
 {{--                <td>{{ $course->user_id }}</td>--}}
 {{--            <td>{{ $course->category_id }}</td>--}}
                 <td>{{ $course->photo }}</td>
-                <td> <h3>{{ $course->title }}</h3>
-           {{ $course->sub_title }}   {{$course->user['name']}}</td>
+                <td> <h3><a href="{{ route('courses.show', [$course->id]) }}" >{{ $course->title }}</a></h3>
+           {{ $course->sub_title }}
+                    Instructor {{$course->user['name']}}
+
+                @if($course->subscriber_count >0)
+                    |Students :{{number_format($course->subscriber_count)}}
+                    @endif
+                        @if($course->view_count >0)
+                        |Students :{{number_format($course->subscriber_count)}}
+
+                    @endif
+
+
+
+
+                </td>
 {{--            <td>{{ $course->description }}</td>--}}
 {{--            <td>{{ $course->about_instructor }}</td>--}}
 {{--            <td>{{ $course->playlist_url }}</td>--}}
@@ -52,7 +66,7 @@
                     @if(Auth::user()->role_id<3||$course->user_id==Auth::user()->id)
                     {!! Form::open(['route' => ['courses.destroy', $course->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>
-                        <a href="{{ route('courses.show', [$course->id]) }}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-eye-open"></i></a>
+{{--                        <a href="{{ route('courses.show', [$course->id]) }}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-eye-open"></i></a>--}}
                         <a href="{{ route('courses.edit', [$course->id]) }}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-edit"></i></a>
                         {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!}
                     </div>

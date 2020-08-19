@@ -15,14 +15,14 @@ class CreateCoursesTable extends Migration
     {
         Schema::create('courses', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id');
+            $table->integer('user_id')->nullable();
 //            create course
             $table->integer('category_id');
             $table->longText('title');
             $table->longText('sub_title')->nullable();//php laravel;
-            $table->longText('description');
-            $table->longText('about_instructor');
-            $table->string('playlist_url');
+            $table->longText('description')->nullable();
+            $table->longText('about_instructor')->nullable();
+            $table->string('playlist_url')->nullable();
             $table->string('tags')->nullable();
             $table->longText('photo')->nullable();//php laravel;
             $table->longText('promo_video_url')->nullable();//php laravel;
