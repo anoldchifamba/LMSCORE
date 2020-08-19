@@ -6,6 +6,7 @@ use App\Http\Controllers\AppBaseController;
 use App\Http\Requests\CreateCourseRequest;
 use App\Http\Requests\UpdateCourseRequest;
 use App\Models\Category;
+use App\Models\Course;
 use Illuminate\Database\Eloquent\Model;
 
 use App\Repositories\CourseRepository;
@@ -28,12 +29,38 @@ class CourseController extends AppBaseController
         $this->courseRepository = $courseRepo;
     }
 
+
     /**
      * Display a listing of the Course.
      *
      * @param Request $request
      * @return Response
      */
+    public function approve(Request $request)
+    {
+        Course::where('id',$request->course_id)->update(['admin_status'=>1]);
+        Flash::success('Course approved successful');
+        return redirect()->back();
+    }
+    public function disapprove(Request $request)
+{
+    Course::where('id',$request->course_id)->update(['admin_status'=>0]);
+    Flash::success('Course disapproved successful');
+    return redirect()->back();
+}
+    public function publishCourse(Request $request)
+    {
+        Course::where('id',$request->course_id)->update(['creator_status'=>1]);
+        Flash::success('Course published successful');
+        return redirect()->back();
+    }
+    public function UnpublishCourse(Request $request)
+    {
+        Course::where('id',$request->course_id)->update(['creator_status'=>0]);
+        Flash::success('Course unpublished successful');
+        return redirect()->back();
+    }
+
     public function index(Request $request)
     {
         $this->courseRepository->pushCriteria(new RequestCriteria($request));

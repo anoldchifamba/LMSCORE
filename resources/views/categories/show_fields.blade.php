@@ -32,13 +32,13 @@
 <!-- Created At Field -->
 <div class="form-group w-100 small text-muted">
     {!! Form::label('created_at', 'Created At:') !!}
-    <p>{{( $category->created_at)->format('h :m a D dd M Y') }}</p>
+    <p>{{( $category->created_at)->format('h :i a-Dd M Y') }}</p>
 </div>
 
 <!-- Updated At Field -->
 
 <div class="form-group w-100 small text-muted">
     {!! Form::label('updated_at', 'Updated At:') !!}
-    <p>{{( $category->updated_at)->format('h :m a D dd M Y') }}</p>
+    <p>{{( $category->updated_at)->format('h :i a-Dd M Y') }}</p>
 </div>
 

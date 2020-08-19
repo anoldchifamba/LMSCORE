@@ -25,9 +25,12 @@ Auth::routes(['verify' => true]);
 Route::get('/home', 'HomeController@index')->middleware('verified');
 
 Route::resource('categories', 'CategoryController');
-
+//courses
 Route::resource('courses', 'CourseController');
-
+Route::post('courses/disapprove', 'CourseController@disapprove')->name('courses.disapprove');
+Route::post('courses/approve', 'CourseController@approve')->name('courses.approve');
+Route::post('courses/publishCourse', 'CourseController@publishCourse')->name('courses.publishCourse');
+Route::post('courses/unpublisheCourse', 'CourseController@unpublishCourse')->name('courses.unpublishCourse');
 Route::resource('comments', 'CommentController');
 
 Route::resource('courseUsers', 'CourseUserController');

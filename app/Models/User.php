@@ -28,7 +28,7 @@ class User extends Model
     use SoftDeletes;
 
     public $table = 'users';
-    
+
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 
@@ -86,5 +86,8 @@ class User extends Model
         'role_id' => 'required'
     ];
 
-    
+    public function role()
+    {
+        return $this->belongsTo('App\Models\Role');
+    }
 }

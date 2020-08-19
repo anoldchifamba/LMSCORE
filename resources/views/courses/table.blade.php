@@ -39,7 +39,7 @@
                         |Students :{{number_format($course->subscriber_count)}}
                     @endif
                     @if($course->view_count >0)
-                        |Students :{{number_format($course->subscriber_count)}}
+                        |Students :{{number_format($course->view_count)}}
 
                     @endif
 
