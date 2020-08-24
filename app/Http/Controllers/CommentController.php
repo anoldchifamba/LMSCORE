@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateCommentRequest;
 use App\Http\Requests\UpdateCommentRequest;
+use App\Models\Category;
+use App\Models\Course;
 use App\Repositories\CommentRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
-use Flash;
+use Flash;use Auth;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 
@@ -43,7 +45,9 @@ class CommentController extends AppBaseController
      */
     public function create()
     {
-        return view('comments.create');
+        $courses=Course::all();
+        $categories=Category::all();
+        return view('comments.create')->with('courses',$courses)->with('categories',$categories);
     }
 
     /**
@@ -56,7 +60,7 @@ class CommentController extends AppBaseController
     public function store(CreateCommentRequest $request)
     {
         $input = $request->all();
-
+        $input['user_id']=Auth::user()->id;
         $comment = $this->commentRepository->create($input);
 
         Flash::success('Comment saved successfully.');

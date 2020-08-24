@@ -20,7 +20,7 @@ class Comment extends Model
     use SoftDeletes;
 
     public $table = 'comments';
-    
+
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 
@@ -55,9 +55,9 @@ class Comment extends Model
      * @var array
      */
     public static $rules = [
-        'user_id' => 'required',
+        'user_id' => '',
         'body' => 'required'
     ];
 
-    
+
 }

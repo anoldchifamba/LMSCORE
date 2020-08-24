@@ -101,18 +101,18 @@ class Course extends Model
      * @var array
      */
     public static $rules = [
-        'user_id' => 'required',
-        'category_id' => 'required',
+        'user_id' => '',
+        'category_id' => '',
         'title' => 'required',
         'description' => 'required',
         'about_instructor' => 'required',
         'playlist_url' => 'required',
         'creator_status' => 'required',
-        'admin_status' => 'required',
+        'admin_status' => '',
         'discount_price' => 'required',
         'actual_price' => 'required',
-        'view_count' => 'required',
-        'subscriber_count' => 'required'
+        'view_count' => '',
+        'subscriber_count' => ''
     ];
 
     /**
@@ -126,4 +126,10 @@ class Course extends Model
     {
         return $this->belongsTo('App\Models\User');
     }
+    public function users()
+{
+    return $this->belongsToMany('App\Models\User')
+        ->withPivot('pay_amount','pay_date','expiry_date','plan','created_at','user_account_id');
+//        ->with('category_id');
+}
 }

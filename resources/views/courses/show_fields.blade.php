@@ -58,7 +58,7 @@
 
 
 <!-- Creator Status Field -->
-@if(Auth::user()->role_id<3 ||Auth::user()->id==$course->user['id'] )
+@if(Auth::check() and(Auth::user()->role_id<3 ||Auth::user()->id==$course->user['id'] ))
     <div class="form-group col-md-6">
         {!! Form::label('creator_status', 'Creator Status:') !!}
         <p>@if( $course->creator_status ==1)

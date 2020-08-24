@@ -72,7 +72,7 @@
 <!-- Photo Field -->
 <div class="form-group col-sm-12 col-lg-8">
     {!! Form::label('photo', 'Photo:') !!}
-    {!! Form::textarea('photo', null, ['class' => 'form-control']) !!}
+    {!! Form::file('photo', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Promo Video Url Field -->

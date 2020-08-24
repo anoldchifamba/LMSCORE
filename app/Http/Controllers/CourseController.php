@@ -92,6 +92,13 @@ class CourseController extends AppBaseController
     {
         $input = $request->all();
         $input['user_id']=Auth::user()->id;
+        $file = $request->file('photo');
+        $filename = $file->getClientOriginalName();
+        $file->storeAs('public/course_image', $filename);
+        $input['photo'] = $filename;
+//        $input['photo']=$request->file('photo')->storeAs('public', $filename);
+//        $request->file('photo') ->store('public/course_image');
+
         $course = $this->courseRepository->create($input);
 
         Flash::success('Course saved successfully.');
@@ -116,10 +123,15 @@ class CourseController extends AppBaseController
             return redirect(route('courses.index'));
         }
 
+//     2   now writing a query to select or show  course  with category_id in courses table is same with category id in category table
+
+        $users=Course::find($id)->users()->get();
+
 //        3  now we want to increment the viws when ever we refresh the page so we import facades  the it use the id ot identify
         DB::table('courses')->where('id',$id)->increment('view_count');
-
-        return view('courses.show')->with('course', $course);
+//dd($users);
+        return view('courses.show')->with('course', $course)->with('users', $users);
+//        return view('courses.show')->with('course', $course->users);
     }
 
     /**
@@ -138,8 +150,10 @@ class CourseController extends AppBaseController
 
             return redirect(route('courses.index'));
         }
+        $categories=Category::all();
+//        return view('courses.create')->with('categories',$categories);
 
-        return view('courses.edit')->with('course', $course);
+        return view('courses.edit')->with('course', $course)->with('categories',$categories);
     }
 
     /**

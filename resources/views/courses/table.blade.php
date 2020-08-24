@@ -18,8 +18,8 @@
             {{--        <th>What Will Students Learn</th>--}}
             {{--        <th>Target Students</th>--}}
             {{--        <th>Requirements</th>--}}
-            <th>Discount Price</th>
-            <th>Actual Price</th>
+            <th> Price</th>
+{{--            <th>Actual Price</th>--}}
             {{--        <th>View Count</th>--}}
             {{--        <th>Subscriber Count</th>--}}
             <th colspan="3">Action</th>
@@ -30,8 +30,9 @@
             <tr>
                 {{--                <td>{{ $course->user_id }}</td>--}}
                 {{--            <td>{{ $course->category_id }}</td>--}}
-                <td>{{ $course->photo }}</td>
-                <td> <h3><a href="{{ route('courses.show', [$course->id]) }}" >{{ $course->title }}</a></h3>
+{{--                <td><img src="{{  asset('storage/course_image/9TEr63VcMted5mLf3IcFtxCkqWU2lWE9PReE72u8.jpeg')}}"></td>--}}
+                <td><img src="{{  asset('storage/course_image/'.$course->photo)}}" height="90px" width="180px"></td>
+                <td> <h4><a href="{{ route('courses.show', [$course->id]) }}" >{{ $course->title }}</a></h4>
                     {{ $course->sub_title }}
                     Instructor {{$course->user['name']}}
 
@@ -58,12 +59,11 @@
                 {{--            <td>{{ $course->what_will_students_learn }}</td>--}}
                 {{--            <td>{{ $course->target_students }}</td>--}}
                 {{--            <td>{{ $course->requirements }}</td>--}}
-                <td>${{ $course->discount_price }}</td>
-                <td>${{ $course->actual_price }}</td>
+                <td><h3>${{ $course->discount_price }}</h3> <br><strike>${{ $course->actual_price }}</strike></td>
                 {{--            <td>{{ $course->view_count }}</td>--}}
                 {{--            <td>{{ $course->subscriber_count }}</td>--}}
                 <td>
-                    @if(Auth::user()->role_id<3||$course->user_id==Auth::user()->id)
+                    @if(Auth::check() AND (Auth::user()->role_id < 3 || $course->user_id == Auth::user()->id))
                         {!! Form::open(['route' => ['courses.destroy', $course->id], 'method' => 'delete']) !!}
                         <div class='btn-group'>
                             {{--                        <a href="{{ route('courses.show', [$course->id]) }}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-eye-open"></i></a>--}}

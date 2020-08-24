@@ -11,7 +11,7 @@
         <div class="box box-primary">
             <div class="box-body">
                 <div class="row">
-                    {!! Form::open(['route' => 'courses.store']) !!}
+                    {!! Form::open(['route' => 'courses.store','enctype'=>'multipart/form-data']) !!}
 
                         @include('courses.fields')
 

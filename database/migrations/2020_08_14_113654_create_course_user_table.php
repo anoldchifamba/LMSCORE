@@ -17,10 +17,11 @@ class CreateCourseUserTable extends Migration
 
             $table->increments('id');
             $table->integer('user_id');
-            $table->integer('course_id');
-            $table->integer('user_account_id');
-            $table->dateTime('pay_date');
-            $table->dateTime('expiry_date');
+            $table->integer('course_id')->nullable();
+//            $table->integer('category_id')->nullable();
+            $table->integer('user_account_id')->nullable();
+            $table->dateTime('pay_date')->nullable();
+            $table->dateTime('expiry_date')->nullable();
             $table->string('plan')->nullable();
             $table->double('pay_amount')->nullable();
 

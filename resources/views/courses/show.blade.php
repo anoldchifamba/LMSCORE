@@ -11,6 +11,8 @@
             <div class="box-body">
                 <div class="row" style="padding-left: 20px">
                     @include('courses.show_fields')
+                    <h3 class="text-center w-100">Subscriber</h3>
+                    @include('users.table-user')
 {{--                    <a href="{{ route('courses.index') }}" class="btn btn-default">Back</a>--}}
                 </div>
             </div>

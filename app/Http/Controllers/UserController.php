@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateUserRequest;
 use App\Http\Requests\UpdateUserRequest;
+use App\Models\Course;
 use App\Repositories\UserRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
@@ -82,10 +83,14 @@ class UserController extends AppBaseController
 
             return redirect(route('users.index'));
         }
+        //     2   now writing a query to select or show  course  with (user_id) in courses table is same with user (id) in users table
+
+        $courses=Course::where('user_id',$user->id)->get();
+
 
 //        3  now we want to increment the viws when ever we refresh the page so we import facades  the it use the id ot identify
         DB::table('users')->where('id',$id)->increment('view_count');
-        return view('users.show')->with('user', $user);
+        return view('users.show')->with('user', $user)->with('courses', $courses);
     }
 
     /**

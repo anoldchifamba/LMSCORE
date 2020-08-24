@@ -1,5 +1,5 @@
 <li class="{{ Request::is('categories*') ? 'active' : '' }}">
-    <a href="{{ route('categories.index') }}"><i class="fa fa-edit"></i><span>All Courses</span></a>
+    <a href="{{ route('categories.index') }}"><i class="fa fa-edit"></i><span>Courses Category</span></a>
 </li>
 
 
@@ -11,9 +11,9 @@
 {{--moderator--}}
 
 {{--@if(Auth::user()->role_id<4)--}}
-    <li class="{{ Request::is('courses*') ? 'active' : '' }}">
-        <a href="{{ route('courses.index') }}"><i class="fa fa-edit"></i><span>My Courses</span></a>
-    </li>
+{{--    <li class="{{ Request::is('courses*') ? 'active' : '' }}">--}}
+{{--        <a href="{{ route('courses.index') }}"><i class="fa fa-edit"></i><span>My Courses</span></a>--}}
+{{--    </li>--}}
 {{--@endif--}}
 {{-- Admin Section --}}
 @if(Auth::user()->role_id<3)

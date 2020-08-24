@@ -10,12 +10,28 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', 'HomeController@welcome');
+Route::get('index', 'HomeController@home');
+Route::get('about', 'HomeController@about');
+Route::get('course', 'HomeController@course');
+Route::get('contact', 'HomeController@contact');
+Route::get('blog', 'HomeController@blog');
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Auth::routes();
+
+Route::get('/home', 'CourseController@index')->name('home');
+
+Route::get('/privacy', function () {
+    return view('privacy_policy');
+});
+Route::get('/tos', function(){
+    return view('terms_of_service');
+});
+Route::get('/refund', function () {
+    return view('refunds');
+});
+//Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -24,9 +40,9 @@ Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->middleware('verified');
 
-Route::resource('categories', 'CategoryController');
+Route::resource('categories', 'CategoryController')->middleware('auth');
 //courses
-Route::resource('courses', 'CourseController');
+Route::resource('courses', 'CourseController')->middleware('auth');
 Route::post('courses/disapprove', 'CourseController@disapprove')->name('courses.disapprove');
 Route::post('courses/approve', 'CourseController@approve')->name('courses.approve');
 Route::post('courses/publishCourse', 'CourseController@publishCourse')->name('courses.publishCourse');
