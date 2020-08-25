@@ -5,15 +5,31 @@
 </div>
 
 <!-- Course Id Field -->
+<!-- Category Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('course_id', 'Course Id:') !!}
-    {!! Form::number('course_id', null, ['class' => 'form-control']) !!}
+    {!! Form::label('category_id', 'Category Id:') !!}
+    {{--    {!! Form::text('category_id', null, ['class' => 'form-control']) !!}\--}}
+
+    <select class="form-control" name="category_id" id="category_id" style="height:40px; ">
+
+        @foreach ($categories as $category)
+            <option value="{{ $category->id}}">{{ $category->name}}</option>
+        @endforeach
+
+    </select>
 </div>
 
 <!-- User Account Id Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('user_account_id', 'User Account Id:') !!}
-    {!! Form::number('user_account_id', null, ['class' => 'form-control']) !!}
+{{--    {!! Form::number('user_account_id', null, ['class' => 'form-control']) !!}--}}
+    <slect class="form-control" name="user_account_id" id="category_id" style="height:40px; ">
+
+        @foreach ($courses as $course)
+            <option value="{{ $course->id}}">{{ $course->title}}</option>
+        @endforeach
+
+    </slect>
 </div>
 
 <!-- Pay Date Field -->

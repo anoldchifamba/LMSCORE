@@ -30,6 +30,11 @@
                     <span class="course-ratings-count">(4 votes)</span>
                 </div>
 
+            <div class="course-ratings flex  align-items-center">
+                Students viewed :
+                <span class="course-ratings-count">({{  $course->view_count }})</span>
+            </div>
+
                 <div class="btn btn-success btn-lg align-items-center" >
                     By Course:       $  {{  $course->discount_price }} <small class="text-muted"> <strike>{{  $course->actual_price }} </strike></small>
                 </div><!-- .course-cost -->

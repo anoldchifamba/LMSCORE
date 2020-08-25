@@ -1,12 +1,18 @@
+<li class="{{ Request::is('courses*') ? 'active' : '' }}">
+    <a href="{{ route('courses.index') }}"><i class="fa fa-certificate"></i><span>Courses</span></a>
+</li>
+
+
 <li class="{{ Request::is('categories*') ? 'active' : '' }}">
-    <a href="{{ route('categories.index') }}"><i class="fa fa-edit"></i><span>Courses Category</span></a>
+    <a href="{{ route('categories.index') }}"><i class="fa fa-list"></i><span>Courses Category</span></a>
+</li>
+
+<li class="{{ Request::is('payments*') ? 'active' : '' }}">
+    <a href="{{ route('payments.index') }}"><i class="fa fa-money"></i><span>My Payments</span></a>
 </li>
 
 
 
-<li class="{{ Request::is('courseUsers*') ? 'active' : '' }}">
-    <a href="{{ route('courseUsers.index') }}"><i class="fa fa-edit"></i><span>Subscriptions</span></a>
-</li>
 
 {{--moderator--}}
 
@@ -17,8 +23,15 @@
 {{--@endif--}}
 {{-- Admin Section --}}
 @if(Auth::user()->role_id<3)
+    <li >
+        <a href="#"><i class="fa fa-user"></i><span>ADMIN MENU</span></a>
+    </li>
+
+    <li class="{{ Request::is('courseUsers*') ? 'active' : '' }}">
+        <a href="{{ route('courseUsers.index') }}"><i class="fa fa-edit"></i><span>My Subscriptions</span></a>
+    </li>
     <li class="{{ Request::is('courses*') ? 'active' : '' }}">
-        <a href="{{ route('courses.index') }}"><i class="fa fa-edit"></i><span>Courses</span></a>
+        <a href="{{ route('courses.index') }}"><i class="fa fa-edit"></i><span>My Courses</span></a>
     </li>
 
     <li class="{{ Request::is('comments*') ? 'active' : '' }}">
@@ -44,8 +57,9 @@
     <li class="{{ Request::is('roles*') ? 'active' : '' }}">
         <a href="{{ route('roles.index') }}"><i class="fa fa-edit"></i><span>Roles</span></a>
     </li>
-@endif
+
 <li class="{{ Request::is('coupons*') ? 'active' : '' }}">
     <a href="{{ route('coupons.index') }}"><i class="fa fa-edit"></i><span>Coupons</span></a>
 </li>
 
+@endif

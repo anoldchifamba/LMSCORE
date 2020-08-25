@@ -173,8 +173,12 @@ class CourseController extends AppBaseController
 
             return redirect(route('courses.index'));
         }
-
-        $course = $this->courseRepository->update($request->all(), $id);
+        $input = $request->all();
+        $file = $request->file('photo');
+        $filename = $file->getClientOriginalName();
+        $file->storeAs('public/course_image', $filename);
+        $input['photo'] = $filename;
+        $course = $this->courseRepository->update($input, $id);
 
         Flash::success('Course updated successfully.');
 

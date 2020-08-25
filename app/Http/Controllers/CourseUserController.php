@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateCourseUserRequest;
 use App\Http\Requests\UpdateCourseUserRequest;
+use App\Models\Category;
+use App\Models\Course;
 use App\Repositories\CourseUserRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
@@ -44,7 +46,8 @@ class CourseUserController extends AppBaseController
      */
     public function create()
     {
-        return view('course_users.create');
+        $categories=Category::all();$courses=Course::all();
+        return view('course_users.create')->with('categories',$categories)->with('courses',$courses);
     }
 
     /**
