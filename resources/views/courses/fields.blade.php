@@ -129,11 +129,15 @@
     {!! Form::label('actual_price', 'Actual Price:') !!}
     {!! Form::number('actual_price', null, ['class' => 'form-control']) !!}
 </div>
-
+<!-- Actual Price Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('actual_price', 'Actual Price:') !!}
+    {!! Form::number('actual_price', null, ['class' => 'form-control']) !!}
+</div>
 <!-- View Count Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('view_count', 'View Count:') !!}
-    {!! Form::number('view_count', null, ['class' => 'form-control']) !!}
+    {!! Form::label('paynow_url', 'Paynow link:') !!}
+    {!! Form::text('paynow_url', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Subscriber Count Field -->

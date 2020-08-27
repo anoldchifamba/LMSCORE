@@ -63,6 +63,7 @@ class Course extends Model
         'requirements',
         'discount_price',
         'actual_price',
+        'paynow_url',
         'view_count',
         'subscriber_count'
     ];
@@ -91,6 +92,7 @@ class Course extends Model
         'requirements' => 'string',
         'discount_price' => 'float',
         'actual_price' => 'float',
+        'paynow_url' => 'string',
         'view_count' => 'integer',
         'subscriber_count' => 'integer'
     ];
@@ -111,6 +113,7 @@ class Course extends Model
         'admin_status' => '',
         'discount_price' => 'required',
         'actual_price' => 'required',
+        'paynow_url' => 'required',
         'view_count' => '',
         'subscriber_count' => ''
     ];

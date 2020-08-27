@@ -82,8 +82,8 @@ class User extends Model
         'name' => 'required',
         'email' => 'required',
         'password' => 'required',
-        'view_count' => 'required',
-        'role_id' => 'required'
+        'view_count' => '',
+        'role_id' => ''
     ];
 
     public function role()

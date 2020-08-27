@@ -18,7 +18,7 @@ Route::get('contact', 'HomeController@contact');
 Route::get('blog', 'HomeController@blog');
 
 
-Auth::routes();
+Auth::routes(['verify'=>true]);
 
 Route::get('/home', 'CourseController@index')->name('home');
 

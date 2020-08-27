@@ -4,12 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreatePaymentRequest;
 use App\Http\Requests\UpdatePaymentRequest;
+use App\Models\Category;
+use App\Models\Course;
 use App\Repositories\PaymentRepository;
 use App\Http\Controllers\AppBaseController;
+use App\User;
 use Illuminate\Http\Request;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
+use Auth;
 
 class PaymentController extends AppBaseController
 {
@@ -43,7 +47,8 @@ class PaymentController extends AppBaseController
      */
     public function create()
     {
-        return view('payments.create');
+        $categories=Category::all();$courses=Course::all();$users=User::all();
+        return view('payments.create')->with('categories',$categories)->with('courses',$courses)->with('users',$users);
     }
 
     /**
@@ -56,7 +61,7 @@ class PaymentController extends AppBaseController
     public function store(CreatePaymentRequest $request)
     {
         $input = $request->all();
-
+        $input['user_id']=Auth::user()->id;
         $payment = $this->paymentRepository->create($input);
 
         Flash::success('Payment saved successfully.');
@@ -100,8 +105,8 @@ class PaymentController extends AppBaseController
 
             return redirect(route('payments.index'));
         }
-
-        return view('payments.edit')->with('payment', $payment);
+        $categories=Category::all();$courses=Course::all();$users=User::all();
+        return view('payments.edit')->with('payment', $payment)->with('categories',$categories)->with('courses',$courses)->with('users',$users);
     }
 
     /**

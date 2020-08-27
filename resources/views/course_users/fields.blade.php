@@ -1,8 +1,28 @@
 <!-- User Id Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('user_id', 'User Id:') !!}
-    {!! Form::number('user_id', null, ['class' => 'form-control']) !!}
+{{--    {!! Form::number('user_id', null, ['class' => 'form-control']) !!}--}}
+    <select class="form-control" name="user_id" id="user_id" style="height:40px; ">
+
+        @foreach ($users as $user)
+            <option value="{{ $user->id}}">{{ $user->email}}</option>
+        @endforeach
+
+    </select>
 </div>
+
+<div class="form-group col-sm-6">
+    {!! Form::label('course_id', 'Course id:') !!}
+    {{--    {!! Form::number('user_account_id', null, ['class' => 'form-control']) !!}--}}
+    <select class="form-control" name="course_id" id="category_id" style="height:40px; ">
+
+        @foreach ($courses as $course)
+            <option value="{{ $course->id}}">{{ $course->title}}</option>
+        @endforeach
+
+    </select>
+</div>
+
 
 <!-- Course Id Field -->
 <!-- Category Id Field -->
@@ -19,18 +39,18 @@
     </select>
 </div>
 
-<!-- User Account Id Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('user_account_id', 'User Account Id:') !!}
+{{--<!-- User Account Id Field -->--}}
+{{--<div class="form-group col-sm-6">--}}
+{{--    {!! Form::label('user_account_id', 'User Account Id:') !!}--}}
 {{--    {!! Form::number('user_account_id', null, ['class' => 'form-control']) !!}--}}
-    <slect class="form-control" name="user_account_id" id="category_id" style="height:40px; ">
+{{--    <select class="form-control" name="user_account_id" id="category_id" style="height:40px; ">--}}
 
-        @foreach ($courses as $course)
-            <option value="{{ $course->id}}">{{ $course->title}}</option>
-        @endforeach
+{{--        @foreach ($courses as $course)--}}
+{{--            <option value="{{ $course->id}}">{{ $course->title}}</option>--}}
+{{--        @endforeach--}}
 
-    </slect>
-</div>
+{{--    </select>--}}
+{{--</div>--}}
 
 <!-- Pay Date Field -->
 <div class="form-group col-sm-6">
@@ -42,7 +62,7 @@
     <script type="text/javascript">
         $('#pay_date').datetimepicker({
             format: 'YYYY-MM-DD HH:mm:ss',
-            useCurrent: false
+            useCurrent: true
         })
     </script>
 @endpush

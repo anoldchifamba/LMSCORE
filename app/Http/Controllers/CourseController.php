@@ -174,6 +174,7 @@ class CourseController extends AppBaseController
             return redirect(route('courses.index'));
         }
         $input = $request->all();
+
         $file = $request->file('photo');
         $filename = $file->getClientOriginalName();
         $file->storeAs('public/course_image', $filename);

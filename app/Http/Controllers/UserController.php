@@ -5,8 +5,11 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CreateUserRequest;
 use App\Http\Requests\UpdateUserRequest;
 use App\Models\Course;
+use App\Models\Payment;
+use App\Models\Role;
 use App\Repositories\UserRepository;
 use App\Http\Controllers\AppBaseController;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Http\Request;
 use Auth;
 use Flash;
@@ -46,7 +49,8 @@ class UserController extends AppBaseController
      */
     public function create()
     {
-        return view('users.create');
+        $roles=Role::all();
+        return view('users.create')->with('roles',$roles);
     }
 
     /**
@@ -86,6 +90,7 @@ class UserController extends AppBaseController
         //     2   now writing a query to select or show  course  with (user_id) in courses table is same with user (id) in users table
 
         $courses=Course::where('user_id',$user->id)->get();
+        $payments=Payment::where('user_id',$user->id)->get();
 
 
 //        3  now we want to increment the viws when ever we refresh the page so we import facades  the it use the id ot identify
@@ -109,8 +114,9 @@ class UserController extends AppBaseController
 
             return redirect(route('users.index'));
         }
-
-        return view('users.edit')->with('user', $user);
+        $roles=Role::all();
+//        return view('users.create')->with('roles',$roles);
+        return view('users.edit')->with('user', $user)->with('roles',$roles);
     }
 
     /**

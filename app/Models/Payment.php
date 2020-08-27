@@ -23,7 +23,7 @@ class Payment extends Model
     use SoftDeletes;
 
     public $table = 'payments';
-    
+
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 
@@ -64,10 +64,22 @@ class Payment extends Model
      * @var array
      */
     public static $rules = [
-        'user_id' => 'required',
+        'user_id' => '',
         'amount' => 'required',
         'status' => 'required'
     ];
+    public function category()
+    {
+        return $this->belongsTo('App\Models\Category');
+    }
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User');
+    }
+    public function course()
+    {
+        return $this->belongsTo('App\Models\Course');
+    }
 
-    
+
 }

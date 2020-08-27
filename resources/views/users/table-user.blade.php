@@ -35,6 +35,7 @@
 {{--            <td>{{ $user->role['name'] }}</td>--}}
 {{--            <td>{{ $user->remember_token }}</td>--}}
                 <td>
+                    @if(Auth::check() AND  Auth::user()->role_id < 3  )
                     {!! Form::open(['route' => ['users.destroy', $user->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>
 
@@ -42,6 +43,7 @@
                         {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!}
                     </div>
                     {!! Form::close() !!}
+                    @endif
                 </td>
             </tr>
         @endforeach

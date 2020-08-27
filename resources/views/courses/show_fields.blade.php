@@ -50,7 +50,7 @@
 
 {{--create the pay button--}}
 <div class="form-group  col-md-6">
-    <a class="btn btn-success btn-lg" href="#"> Buy Course $ {{ $course->discount_price }} </a>
+    <a class="btn btn-success btn-lg" href="{{ $course->paynow_url }}"> Buy Course $ {{ $course->discount_price }} </a>
 </div>
 
 

@@ -15,14 +15,15 @@
         <tbody>
         @foreach($payments as $payment)
             <tr>
-                <td>{{ $payment->user_id }}</td>
-            <td>{{ $payment->course_id }}</td>
-            <td>{{ $payment->category_id }}</td>
+                <td>{{ $payment->user['name'] }}</td>
+            <td>{{ $payment->course['title'] }}</td>
+            <td>{{ $payment->category['name'] }}</td>
             <td>{{ $payment->amount }}</td>
             <td>{{ $payment->status }}</td>
             <td>{{ $payment->mode_of_payment }}</td>
             <td>{{ $payment->payment_processor }}</td>
                 <td>
+
                     {!! Form::open(['route' => ['payments.destroy', $payment->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>
                         <a href="{{ route('payments.show', [$payment->id]) }}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-eye-open"></i></a>

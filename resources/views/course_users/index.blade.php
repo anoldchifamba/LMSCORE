@@ -3,9 +3,11 @@
 @section('content')
     <section class="content-header">
         <h1 class="pull-left">Course Users</h1>
+        @if(Auth::check() AND Auth::user()->role_id < 3)
         <h1 class="pull-right">
            <a class="btn btn-primary pull-right" style="margin-top: -10px;margin-bottom: 5px" href="{{ route('courseUsers.create') }}">Add New</a>
         </h1>
+        @endif
     </section>
     <div class="content">
         <div class="clearfix"></div>
@@ -19,7 +21,7 @@
             </div>
         </div>
         <div class="text-center">
-        
+
         </div>
     </div>
 @endsection

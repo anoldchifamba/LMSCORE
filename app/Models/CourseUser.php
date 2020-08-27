@@ -24,7 +24,7 @@ class CourseUser extends Model
     use SoftDeletes;
 
     public $table = 'course_user';
-    
+
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 
@@ -69,11 +69,25 @@ class CourseUser extends Model
     public static $rules = [
         'user_id' => 'required',
         'course_id' => 'required',
-        'user_account_id' => 'required',
-        'pay_date' => 'required',
-        'expiry_date' => 'required',
+        'user_account_id' => '',
+        'pay_date' => '',
+        'expiry_date' => '',
+        'plan' => 'required',
+        'pay_amount' => 'required',
         'status' => 'required'
     ];
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User');
+    }
+    public function course()
+    {
+        return $this->belongsTo('App\Models\Course');
+    }
+    public function category()
+    {
+        return $this->belongsTo('App\Models\Catergory');
+    }
 
-    
+
 }

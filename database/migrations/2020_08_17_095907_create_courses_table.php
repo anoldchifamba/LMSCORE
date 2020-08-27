@@ -35,6 +35,7 @@ class CreateCoursesTable extends Migration
 //price and cuopone
             $table->double('discount_price',10,2);
             $table->double('actual_price',10,2);
+            $table->string('paynow_url');
 // stats
             $table->integer('view_count')->nullable();
             $table->integer('subscriber_count')->nullable();;

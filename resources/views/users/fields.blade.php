@@ -44,20 +44,20 @@
 </div>
 
 
-<!-- Email Verified At Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('email_verified_at', 'Email Verified At:') !!}
-    {!! Form::date('email_verified_at', null, ['class' => 'form-control','id'=>'email_verified_at']) !!}
-</div>
+{{--<!-- Email Verified At Field -->--}}
+{{--<div class="form-group col-sm-6">--}}
+{{--    {!! Form::label('email_verified_at', 'Email Verified At:') !!}--}}
+{{--    {!! Form::date('email_verified_at', null, ['class' => 'form-control','id'=>'email_verified_at']) !!}--}}
+{{--</div>--}}
 
-@push('scripts')
-    <script type="text/javascript">
-        $('#email_verified_at').datetimepicker({
-            format: 'YYYY-MM-DD HH:mm:ss',
-            useCurrent: false
-        })
-    </script>
-@endpush
+{{--@push('scripts')--}}
+{{--    <script type="text/javascript">--}}
+{{--        $('#email_verified_at').datetimepicker({--}}
+{{--            format: 'YYYY-MM-DD HH:mm:ss',--}}
+{{--            useCurrent: false--}}
+{{--        })--}}
+{{--    </script>--}}
+{{--@endpush--}}
 
 <!-- Password Field -->
 <div class="form-group col-sm-6">
@@ -65,23 +65,30 @@
     {!! Form::password('password', ['class' => 'form-control']) !!}
 </div>
 
-<!-- View Count Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('view_count', 'View Count:') !!}
-    {!! Form::number('view_count', null, ['class' => 'form-control']) !!}
-</div>
+{{--<!-- View Count Field -->--}}
+{{--<div class="form-group col-sm-6">--}}
+{{--    {!! Form::label('view_count', 'View Count:') !!}--}}
+{{--    {!! Form::number('view_count', null, ['class' => 'form-control']) !!}--}}
+{{--</div>--}}
 
 <!-- Role Id Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('role_id', 'Role Id:') !!}
-    {!! Form::number('role_id', null, ['class' => 'form-control']) !!}
+{{--    {!! Form::number('role_id', null, ['class' => 'form-control']) !!}--}}
+    <select class="form-control" name="role_id" id="category_id" style="height:40px; ">
+
+        @foreach ($roles as $role)
+            <option value="{{ $role->id}}">{{ $role->name}}</option>
+        @endforeach
+
+    </select>
 </div>
 
-<!-- Remember Token Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('remember_token', 'Remember Token:') !!}
-    {!! Form::text('remember_token', null, ['class' => 'form-control']) !!}
-</div>
+{{--<!-- Remember Token Field -->--}}
+{{--<div class="form-group col-sm-6">--}}
+{{--    {!! Form::label('remember_token', 'Remember Token:') !!}--}}
+{{--    {!! Form::text('remember_token', null, ['class' => 'form-control']) !!}--}}
+{{--</div>--}}
 
 <!-- Submit Field -->
 <div class="form-group col-sm-12">

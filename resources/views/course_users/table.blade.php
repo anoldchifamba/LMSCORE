@@ -16,14 +16,19 @@
         <tbody>
         @foreach($courseUsers as $courseUser)
             <tr>
-                <td>{{ $courseUser->user_id }}</td>
-            <td>{{ $courseUser->course_id }}</td>
-            <td>{{ $courseUser->user_account_id }}</td>
+                <td>{{$courseUser->user['name']}}</td>
+            <td>{{ $courseUser->course['title'] }}</td>
+            <td>{{ $courseUser->user['name'] }}</td>
             <td>{{ $courseUser->pay_date }}</td>
             <td>{{ $courseUser->expiry_date }}</td>
             <td>{{ $courseUser->plan }}</td>
             <td>{{ $courseUser->pay_amount }}</td>
-            <td>{{ $courseUser->status }}</td>
+            <td>@if($courseUser->status==0)
+             Off
+             @else
+             On
+                    @endif
+            </td>
                 <td>
                     {!! Form::open(['route' => ['courseUsers.destroy', $courseUser->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>

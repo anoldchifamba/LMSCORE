@@ -8,11 +8,12 @@ use App\Models\Category;
 use App\Models\Course;
 use App\Repositories\CourseUserRepository;
 use App\Http\Controllers\AppBaseController;
+use App\User;
 use Illuminate\Http\Request;
 use Flash;
 use Illuminate\Support\Facades\DB;
 use Prettus\Repository\Criteria\RequestCriteria;
-use Response;
+use Response;use Auth;
 
 class CourseUserController extends AppBaseController
 {
@@ -46,8 +47,8 @@ class CourseUserController extends AppBaseController
      */
     public function create()
     {
-        $categories=Category::all();$courses=Course::all();
-        return view('course_users.create')->with('categories',$categories)->with('courses',$courses);
+        $categories=Category::all();$courses=Course::all();$users=User::all();
+        return view('course_users.create')->with('categories',$categories)->with('courses',$courses)->with('users',$users);
     }
 
     /**
@@ -60,7 +61,7 @@ class CourseUserController extends AppBaseController
     public function store(CreateCourseUserRequest $request)
     {
         $input = $request->all();
-
+        $input['user_account_id']=Auth::user()->id;
         $courseUser = $this->courseUserRepository->create($input);
 
         Flash::success('Course User saved successfully.');
@@ -86,7 +87,7 @@ class CourseUserController extends AppBaseController
         }
 
 //        3  now we want to increment the viws when ever we refresh the page so we import facades  the it use the id ot identify
-        DB::table('course_user')->where('id',$id)->increment('view_count');
+//        DB::table('course_user')->where('id',$id)->increment('view_count');
         return view('course_users.show')->with('courseUser', $courseUser);
     }
 
@@ -106,8 +107,8 @@ class CourseUserController extends AppBaseController
 
             return redirect(route('courseUsers.index'));
         }
-
-        return view('course_users.edit')->with('courseUser', $courseUser);
+        $categories=Category::all();$courses=Course::all();$users=User::all();
+        return view('course_users.edit')->with('courseUser', $courseUser)->with('categories',$categories)->with('courses',$courses)->with('users',$users);
     }
 
     /**
@@ -127,8 +128,9 @@ class CourseUserController extends AppBaseController
 
             return redirect(route('courseUsers.index'));
         }
-
-        $courseUser = $this->courseUserRepository->update($request->all(), $id);
+        $input = $request->all();
+        $input['user_account_id']=Auth::user()->id;
+        $courseUser = $this->courseUserRepository->update($input, $id);
 
         Flash::success('Course User updated successfully.');
 
