@@ -132,7 +132,7 @@ class Course extends Model
     public function users()
 {
     return $this->belongsToMany('App\Models\User')
-        ->withPivot('pay_amount','pay_date','expiry_date','plan','created_at','user_account_id');
+        ->withPivot('pay_amount','pay_date','expiry_date','token','created_at','user_account_id');
 //        ->with('category_id');
 }
 }

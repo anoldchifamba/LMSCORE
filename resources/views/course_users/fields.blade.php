@@ -58,14 +58,14 @@
     {!! Form::date('pay_date', null, ['class' => 'form-control','id'=>'pay_date']) !!}
 </div>
 
-@push('scripts')
-    <script type="text/javascript">
-        $('#pay_date').datetimepicker({
-            format: 'YYYY-MM-DD HH:mm:ss',
-            useCurrent: true
-        })
-    </script>
-@endpush
+{{--@push('scripts')--}}
+{{--    <script type="text/javascript">--}}
+{{--        $('#pay_date').datetimepicker({--}}
+{{--            format: 'YYYY-MM-DD HH:mm:ss',--}}
+{{--            useCurrent: true--}}
+{{--        })--}}
+{{--    </script>--}}
+{{--@endpush--}}
 
 <!-- Expiry Date Field -->
 <div class="form-group col-sm-6">
@@ -73,19 +73,19 @@
     {!! Form::date('expiry_date', null, ['class' => 'form-control','id'=>'expiry_date']) !!}
 </div>
 
-@push('scripts')
-    <script type="text/javascript">
-        $('#expiry_date').datetimepicker({
-            format: 'YYYY-MM-DD HH:mm:ss',
-            useCurrent: false
-        })
-    </script>
-@endpush
+{{--@push('scripts')--}}
+{{--    <script type="text/javascript">--}}
+{{--        $('#expiry_date').datetimepicker({--}}
+{{--            format: 'YYYY-MM-DD HH:mm:ss',--}}
+{{--            useCurrent: false--}}
+{{--        })--}}
+{{--    </script>--}}
+{{--@endpush--}}
 
 <!-- Plan Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('plan', 'Plan:') !!}
-    {!! Form::text('plan', null, ['class' => 'form-control']) !!}
+    {!! Form::label('token', 'Token:') !!}
+    {!! Form::text('token', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Pay Amount Field -->
