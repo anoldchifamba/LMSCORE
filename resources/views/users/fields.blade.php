@@ -25,13 +25,18 @@
 <!-- Gender Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('gender', 'Gender:') !!}
-    {!! Form::text('gender', null, ['class' => 'form-control']) !!}
+{{--    {!! Form::text('gender', null, ['class' => 'form-control']) !!}--}}
+    <select name="gender" class="form-control" style="height:35px; ">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+    </select>
 </div>
 
 <!-- Date Of Birth Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('date_of_birth', 'Date Of Birth:') !!}
-    {!! Form::text('date_of_birth', null, ['class' => 'form-control']) !!}
+{{--    {!! Form::text('date_of_birth', null, ['class' => 'form-control']) !!}--}}
+    {!! Form::date('date_of_birth', null, ['class' => 'form-control','id'=>'date_of_birth']) !!}
 </div>
 
 <!-- Is Subscribed Field -->
@@ -75,7 +80,7 @@
 <div class="form-group col-sm-6">
     {!! Form::label('role_id', 'Role Id:') !!}
 {{--    {!! Form::number('role_id', null, ['class' => 'form-control']) !!}--}}
-    <select class="form-control" name="role_id" id="category_id" style="height:40px; ">
+    <select class="form-control" name="role_id" id="category_id" style="height:35px; ">
 
         @foreach ($roles as $role)
             <option value="{{ $role->id}}">{{ $role->name}}</option>

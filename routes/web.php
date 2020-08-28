@@ -47,6 +47,7 @@ Route::post('courses/disapprove', 'CourseController@disapprove')->name('courses.
 Route::post('courses/approve', 'CourseController@approve')->name('courses.approve');
 Route::post('courses/publishCourse', 'CourseController@publishCourse')->name('courses.publishCourse');
 Route::post('courses/unpublisheCourse', 'CourseController@unpublishCourse')->name('courses.unpublishCourse');
+Route::post('courses/tokenCourse', 'CourseController@tokenCourse')->name('courses.tokenCourse');
 Route::resource('comments', 'CommentController');
 
 Route::resource('courseUsers', 'CourseUserController');

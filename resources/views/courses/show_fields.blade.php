@@ -51,6 +51,15 @@
 {{--create the pay button--}}
 <div class="form-group  col-md-6">
     <a class="btn btn-success btn-lg" href="{{ $course->paynow_url }}"> Buy Course $ {{ $course->discount_price }} </a>
+    <br>
+    OR
+    <br>
+    {!! Form::open(['route' => ['courses.tokenCourse', $course->id], 'method' => 'post']) !!}
+    <input type="hidden" value="{{$course->id}}" name="course_id"/>
+    {{--                <a class="btn btn-danger btn-xs">Click to Disapprove</a>--}}
+    <input type="text" value="" name="token" class="form-control-xs" required/>
+    {!! Form::button('<i class="fa fa-lock"></i>Use Token', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs']) !!}
+    {!! Form::close() !!}
 </div>
 
 

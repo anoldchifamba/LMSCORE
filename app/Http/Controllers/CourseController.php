@@ -7,11 +7,13 @@ use App\Http\Requests\CreateCourseRequest;
 use App\Http\Requests\UpdateCourseRequest;
 use App\Models\Category;
 use App\Models\Course;
+use App\Models\CourseUser;
 use Illuminate\Database\Eloquent\Model;
 
 use App\Repositories\CourseRepository;
 //use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 use Flash;
 use Auth;
 use Illuminate\Support\Facades\DB;
@@ -57,6 +59,30 @@ class CourseController extends AppBaseController
     public function UnpublishCourse(Request $request)
     {
         Course::where('id',$request->course_id)->update(['creator_status'=>0]);
+        Flash::success('Course unpublished successful');
+        return redirect()->back();
+    }
+    public function tokenCourse(Request $request)
+    {
+        $user_id=Auth::user()->id;
+        $verify_tokens=CourseUser::where('user_id',$user_id)
+            ->where('course_id',$request->course_id)
+            ->where('token',$request->token)->get();
+
+
+        foreach ($verify_tokens as $verify_token) {
+            $remaining_hours = Carbon::now()->diffInHours(Carbon::parse($verify_token->expiry_date));
+if ( $remaining_hours>0) {
+    $verifycouselinks = Course::where('id', $request->course_id)->get();
+    return view('courses.channel')->with('verifycouselinks',$verifycouselinks);
+}
+
+
+
+        }
+
+
+
         Flash::success('Course unpublished successful');
         return redirect()->back();
     }
