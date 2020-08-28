@@ -144,21 +144,32 @@
 </div>
 
 
+<!-- Description Field -->
+<div class="form-group col-md-6">
+    <iframe width="460" height="315" src="{{ $course->promo_video_url }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+</div>
 
 
 
 
 <!-- Description Field -->
-<div class="form-group col-md-8">
+<div class="form-group col-md-6">
     {!! Form::label('description', 'Description:') !!}
     <p>{{ $course->description }}</p>
 </div>
 
 <!-- About Instructor Field -->
-<div class="form-group col-md-8">
+<div class="form-group col-md-6">
     {!! Form::label('about_instructor', 'About Instructor:') !!}
     <p>{{ $course->about_instructor }}</p>
+
+    <br>
+    {!! Form::label('target_students', 'Target Students:') !!}
+    <p>{{ $course->target_students }}</p>
+    <br>
+    {!! Form::label('requirements', 'Requirements:') !!}
+    <p>{{ $course->requirements }}</p>
 </div>
 
 <!-- Playlist Url Field -->
@@ -187,22 +198,22 @@
 
 
 <!-- What Will Students Learn Field -->
-<div class="form-group  col-md-8">
+<div class="form-group  col-md-6">
     {!! Form::label('what_will_students_learn', 'What Will Students Learn:') !!}
     <p>{{ $course->what_will_students_learn }}</p>
 </div>
 
-<!-- Target Students Field -->
-<div class="form-group  col-md-8">
-    {!! Form::label('target_students', 'Target Students:') !!}
-    <p>{{ $course->target_students }}</p>
-</div>
+{{--<!-- Target Students Field -->--}}
+{{--<div class="form-group  col-md-6">--}}
+{{--    {!! Form::label('target_students', 'Target Students:') !!}--}}
+{{--    <p>{{ $course->target_students }}</p>--}}
+{{--</div>--}}
 
-<!-- Requirements Field -->
-<div class="form-group  col-md-8">
-    {!! Form::label('requirements', 'Requirements:') !!}
-    <p>{{ $course->requirements }}</p>
-</div>
+{{--<!-- Requirements Field -->--}}
+{{--<div class="form-group  col-md-8">--}}
+{{--    {!! Form::label('requirements', 'Requirements:') !!}--}}
+{{--    <p>{{ $course->requirements }}</p>--}}
+{{--</div>--}}
 
 
 
