@@ -10,6 +10,7 @@ use App\Repositories\PaymentRepository;
 use App\Http\Controllers\AppBaseController;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
@@ -62,6 +63,7 @@ class PaymentController extends AppBaseController
     {
         $input = $request->all();
         $input['user_id']=Auth::user()->id;
+        $input['payment_processor']=Str::random();
         $payment = $this->paymentRepository->create($input);
 
         Flash::success('Payment saved successfully.');

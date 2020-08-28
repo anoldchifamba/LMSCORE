@@ -39,7 +39,7 @@ class CourseUser extends Model
         'user_account_id',
         'pay_date',
         'expiry_date',
-        'plan',
+        'token',
         'pay_amount',
         'status'
     ];
@@ -70,9 +70,9 @@ class CourseUser extends Model
         'user_id' => 'required',
         'course_id' => 'required',
         'user_account_id' => '',
-        'pay_date' => '',
-        'expiry_date' => '',
-        'plan' => 'required',
+        'pay_date' => 'required',
+        'expiry_date' => 'required',
+        'token' => 'required',
         'pay_amount' => 'required',
         'status' => 'required'
     ];

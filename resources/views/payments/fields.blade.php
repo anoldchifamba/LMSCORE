@@ -67,11 +67,11 @@
     </select>
 </div>
 
-<!-- Payment Processor Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('payment_processor', 'Other Info:') !!}
-    {!! Form::text('payment_processor', null, ['class' => 'form-control']) !!}
-</div>
+{{--<!-- Payment Processor Field -->--}}
+{{--<div class="form-group col-sm-6">--}}
+{{--    {!! Form::label('payment_processor', 'Other Info:') !!}--}}
+{{--    {!! Form::text('payment_processor', null, ['class' => 'form-control']) !!}--}}
+{{--</div>--}}
 
 <!-- Submit Field -->
 <div class="form-group col-sm-12">
