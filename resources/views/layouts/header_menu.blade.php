@@ -58,6 +58,7 @@
                         <nav class="site-navigation flex justify-content-end align-items-center">
                             <ul class="flex flex-column flex-lg-row justify-content-lg-end align-content-center">
                                 <li class="current-menu-item"><a href="{{ url('index') }}">Home</a></li>
+
                                 <li><a href="{{ url('about') }}">About</a></li>
                                 <li><a href="{{ url('course') }}">Courses</a></li>
                                 <li><a href="{{ url('blog') }}">blog</a></li>

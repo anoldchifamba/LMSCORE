@@ -13,6 +13,7 @@
                     @include('users.show_fields')
                     <h3 class="text-center w-100">My  Courses</h3>
                     @include('courses.table')
+
 {{--                    <a href="{{ route('users.index') }}" class="btn btn-default">Back</a>--}}
                 </div>
             </div>

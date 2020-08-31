@@ -8,9 +8,9 @@
 </li>
 
 
-<li class="{{ Request::is('payments*') ? 'active' : '' }}">
-    <a href="{{ route('payments.index') }}"><i class="fa fa-money"></i><span>My Payments</span></a>
-</li>
+{{--<li class="{{ Request::is('payments*') ? 'active' : '' }}">--}}
+{{--    <a href="{{ route('payments.index') }}"><i class="fa fa-money"></i><span>My Payments</span></a>--}}
+{{--</li>--}}
 
 
 
@@ -44,7 +44,7 @@
     </li>
 
     <li class="{{ Request::is('payments*') ? 'active' : '' }}">
-        <a href="{{ route('payments.index') }}"><i class="fa fa-edit"></i><span>Payments</span></a>
+        <a href="{{ route('payments.index') }}"><i class="fa fa-money"></i><span>Payments</span></a>
     </li>
 
     <li class="{{ Request::is('users*') ? 'active' : '' }}">

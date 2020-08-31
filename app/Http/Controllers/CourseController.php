@@ -154,6 +154,7 @@ if ( $remaining_hours>0) {
 
         $users=Course::find($id)->users()->get();
 
+
 //        3  now we want to increment the viws when ever we refresh the page so we import facades  the it use the id ot identify
         DB::table('courses')->where('id',$id)->increment('view_count');
 //dd($users);

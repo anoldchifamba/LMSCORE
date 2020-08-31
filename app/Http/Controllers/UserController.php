@@ -95,7 +95,7 @@ class UserController extends AppBaseController
 
 //        3  now we want to increment the viws when ever we refresh the page so we import facades  the it use the id ot identify
         DB::table('users')->where('id',$id)->increment('view_count');
-        return view('users.show')->with('user', $user)->with('courses', $courses);
+        return view('users.show')->with('user', $user)->with('courses', $courses)->with('payments', $payments);
     }
 
     /**

@@ -1,6 +1,6 @@
 @foreach($courses as $course)
     <a href="/courses/{{ $course->id }}">
-<div class="col-12 col-md-6 col-lg-4 px-25" onclick="location.href='/courses/{{ $course->id }}';" >
+<div class="col-12 col-md-6 col-lg-4 px-25" style="margin-top: -4%;" onclick="location.href='/courses/{{ $course->id }}';" >
     <div class="course-content"  style=" border-radius: 5px;border: 3px solid lightgreen;padding: 10px; ">
         <figure class="course-thumbnail">
             <a >  <img src="{{  asset('storage/course_image/'.$course->photo)}}"  style="height: 150px; " ></a>
