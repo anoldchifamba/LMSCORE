@@ -58,6 +58,10 @@ class CategoryController extends AppBaseController
     public function store(CreateCategoryRequest $request)
     {
         $input = $request->all();
+        $file = $request->file('photo');
+        $filename = $file->getClientOriginalName();
+        $file->storeAs('public/category_image', $filename);
+        $input['photo'] = $filename;
 
         $category = $this->categoryRepository->create($input);
 

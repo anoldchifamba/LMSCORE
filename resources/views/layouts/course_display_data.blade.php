@@ -1,14 +1,14 @@
 @foreach($courses as $course)
     <a href="/courses/{{ $course->id }}">
-<div class="col-12 col-md-6 col-lg-4 px-25" onclick="location.href='/courses/{{ $course->id }}';">
-    <div class="course-content">
+<div class="col-12 col-md-6 col-lg-4 px-25" onclick="location.href='/courses/{{ $course->id }}';" >
+    <div class="course-content"  style=" border-radius: 5px;border: 3px solid lightgreen;padding: 10px; ">
         <figure class="course-thumbnail">
-            <a >  <img src="{{  asset('storage/course_image/'.$course->photo)}}" ></a>
+            <a >  <img src="{{  asset('storage/course_image/'.$course->photo)}}"  style="height: 150px; " ></a>
         </figure><!-- .course-thumbnail -->
 
-        <div class="course-content-wrap">
+        <div class="course-content-wrap" >
             <header class="entry-header">
-                <h2 class="entry-title"><a >{{ $course->title }}</a></h2>
+                <h2 class="entry-title"><a >{{  str_limit($course->title ,$limit=40 ,$end='...')}}</a></h2>
 
                 <div class="entry-meta flex align-items-center">
                     <div class="course-author"><a href="#">{{ $course->user['name'] }} </a></div>

@@ -19,7 +19,7 @@ class Category extends Model
     use SoftDeletes;
 
     public $table = 'categories';
-    
+
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 
@@ -31,7 +31,8 @@ class Category extends Model
     public $fillable = [
         'name',
         'description',
-        'view_count'
+        'view_count',
+        'photo'
     ];
 
     /**
@@ -43,7 +44,8 @@ class Category extends Model
         'id' => 'integer',
         'name' => 'string',
         'description' => 'string',
-        'view_count' => 'integer'
+        'view_count' => 'integer',
+        'photo' => 'sting'
     ];
 
     /**
@@ -55,5 +57,5 @@ class Category extends Model
         'name' => 'required'
     ];
 
-    
+
 }

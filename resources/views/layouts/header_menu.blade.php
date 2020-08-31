@@ -62,6 +62,7 @@
                                 <li><a href="{{ url('course') }}">Courses</a></li>
                                 <li><a href="{{ url('blog') }}">blog</a></li>
                                 <li><a href="{{ url('contact') }}">Contact</a></li>
+
                             </ul>
 
                             <div class="hamburger-menu d-lg-none">

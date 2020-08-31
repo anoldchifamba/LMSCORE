@@ -22,6 +22,9 @@
                 <div class="logo-wrap">
                     <img src="{{ asset('log/cism.png') }}" alt="" width="70px"height="70px">
                 </div><!-- .logo-wrap -->
+                <div class="logo-wrap">
+                    <img src="{{ asset('log/ceh.png') }}" alt="" width="100px"height="90px">
+                </div><!-- .logo-wrap -->
             </div><!-- .col -->
         </div><!-- .row -->
     </div><!-- .container -->

@@ -1,11 +1,12 @@
-<li class="{{ Request::is('courses*') ? 'active' : '' }}">
-    <a href="{{ route('courses.index') }}"><i class="fa fa-certificate"></i><span>Courses</span></a>
-</li>
 
 
 <li class="{{ Request::is('categories*') ? 'active' : '' }}">
     <a href="{{ route('categories.index') }}"><i class="fa fa-list"></i><span>Courses Category</span></a>
 </li>
+<li class="{{ Request::is('courses*') ? 'active' : '' }}">
+    <a href="{{ route('courses.index') }}"><i class="fa fa-certificate"></i><span>Courses List</span></a>
+</li>
+
 
 <li class="{{ Request::is('payments*') ? 'active' : '' }}">
     <a href="{{ route('payments.index') }}"><i class="fa fa-money"></i><span>My Payments</span></a>

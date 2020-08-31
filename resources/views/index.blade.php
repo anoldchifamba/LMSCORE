@@ -11,12 +11,11 @@
             <div class="col-12">
                 <div class="hero-content-wrap flex flex-column justify-content-center align-items-start">
                     <header class="entry-header">
-                        <h4>Get started with online courses</h4>
-                        <h1>best online<br/>Learning system</h1>
+
                     </header><!-- .entry-header -->
 
                     <div class="entry-content">
-                        <p>Learn on your schedule Anywhere, anytime. Start learning today!</div><!-- .entry-content -->
+                        <p>Online Learning , Anywhere, Anytime with Atacademy!</p></div><!-- .entry-content -->
 
                     <footer class="entry-footer read-more">
                         <a href="#">read more</a>
@@ -107,6 +106,7 @@
     </div><!-- .container-fluid -->
 </div><!-- .icon-boxes -->
 </section><!-- .courses-wrap -->
+
 
 <section class="featured-courses vertical-column courses-wrap">
     <div class="container">

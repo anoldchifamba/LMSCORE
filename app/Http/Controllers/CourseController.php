@@ -92,6 +92,7 @@ if ( $remaining_hours>0) {
         $this->courseRepository->pushCriteria(new RequestCriteria($request));
         $courses = $this->courseRepository->all();
 
+
         return view('courses.index')
             ->with('courses', $courses);
     }
