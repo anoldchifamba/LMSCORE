@@ -47,6 +47,3 @@
     </a>
 @endforeach
 
-
-
-
