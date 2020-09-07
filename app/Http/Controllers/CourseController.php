@@ -6,8 +6,10 @@ use App\Http\Controllers\AppBaseController;
 use App\Http\Requests\CreateCourseRequest;
 use App\Http\Requests\UpdateCourseRequest;
 use App\Models\Category;
+use App\Models\Comment;
 use App\Models\Course;
 use App\Models\CourseUser;
+use App\Models\Item;
 use Illuminate\Database\Eloquent\Model;
 
 use App\Repositories\CourseRepository;
@@ -74,7 +76,14 @@ class CourseController extends AppBaseController
             $remaining_hours = Carbon::now()->diffInHours(Carbon::parse($verify_token->expiry_date));
 if ( $remaining_hours>0) {
     $verifycouselinks = Course::where('id', $request->course_id)->get();
-    return view('courses.channel')->with('verifycouselinks',$verifycouselinks);
+    $course_item = Item::where('course_id', $request->course_id)->get();
+    $course_comments = Comment::where('course_id', $request->course_id)->get();
+
+    return view('courses.channel')->with('course_item',$course_item)->with('verifycouselinks',$verifycouselinks)->with('course_comments',$course_comments);
+}
+else{
+    Flash::success('Course subscription expired');
+    return redirect()->back();
 }
 
 
@@ -119,12 +128,32 @@ if ( $remaining_hours>0) {
     {
         $input = $request->all();
         $input['user_id']=Auth::user()->id;
+        $input['view_count']=0;
+            $input['viewer_count']=0;
+        $file = $request->file('course_outline');
+        $filename = $file->getClientOriginalName();
+        $file->storeAs('public/course_outline', $filename);
+        $input['course_outline'] = $filename;
+
+
+
         $file = $request->file('photo');
         $filename = $file->getClientOriginalName();
         $file->storeAs('public/course_image', $filename);
         $input['photo'] = $filename;
 //        $input['photo']=$request->file('photo')->storeAs('public', $filename);
 //        $request->file('photo') ->store('public/course_image');
+
+        $file = $request->file('course_calendar');
+        $filename = $file->getClientOriginalName();
+        $file->storeAs('public/course_calendar', $filename);
+        $input['course_calendar'] = $filename;
+
+        $input['subscriber_count']=$input['viewer_count'] = 0;
+
+
+
+
 
         $course = $this->courseRepository->create($input);
 
@@ -203,10 +232,26 @@ if ( $remaining_hours>0) {
         }
         $input = $request->all();
 
+        $file = $request->file('course_outline');
+        $filename = $file->getClientOriginalName();
+        $file->storeAs('public/course_outline', $filename);
+        $input['course_outline'] = $filename;
+
+
         $file = $request->file('photo');
         $filename = $file->getClientOriginalName();
         $file->storeAs('public/course_image', $filename);
         $input['photo'] = $filename;
+
+        $file = $request->file('course_calendar');
+        $filename = $file->getClientOriginalName();
+        $file->storeAs('public/course_calendar', $filename);
+        $input['course_calendar'] = $filename;
+
+
+
+
+
         $course = $this->courseRepository->update($input, $id);
 
         Flash::success('Course updated successfully.');

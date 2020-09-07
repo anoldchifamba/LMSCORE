@@ -13,7 +13,7 @@
     <p>{{ $course->sub_title }}</p>
     <div class="text-muted">
         @if($course->subscriber_count >0)
-            |Students :{{number_format($course->subscriber_count)}}
+            |Students subscribed:{{number_format($course->subscriber_count)}}
         @endif
         @if($course->view_count >0)
             |Students viewed :{{number_format($course->view_count)}}
@@ -201,6 +201,9 @@
 <div class="form-group  col-md-6">
     {!! Form::label('what_will_students_learn', 'What Will Students Learn:') !!}
     <p>{{ $course->what_will_students_learn }}</p>
+    <br>
+    {!! Form::label('what_will_students_learn', 'Course Content:') !!}
+    <img class="card-img-top" height="400px" src="{{  asset('storage/course_outline/'.$course->course_outline)}}" >
 </div>
 
 {{--<!-- Target Students Field -->--}}

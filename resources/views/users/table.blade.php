@@ -30,7 +30,7 @@
             <td>{{ $user->email_verified_at }}</td>
 {{--            <td>{{ $user->password }}</td>--}}
             <td>{{ $user->view_count }}</td>
-            <td>{{ $user->role['name'] }}</td>
+            <td>{{ $user->role['name']}}</td>
 {{--            <td>{{ $user->remember_token }}</td>--}}
                 <td>
                     {!! Form::open(['route' => ['users.destroy', $user->id], 'method' => 'delete']) !!}

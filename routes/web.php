@@ -21,7 +21,8 @@ Route::get('blog', 'HomeController@blog');
 Auth::routes(['verify'=>true]);
 
 Route::get('/home', 'CourseController@index')->name('home');
-
+Route::get('/home', 'CourseController@index')->name('home');
+Route::get('/download/{file}','ItemController@download')->name('download');
 Route::get('/privacy', function () {
     return view('privacy_policy');
 });

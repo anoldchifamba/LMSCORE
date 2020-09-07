@@ -62,8 +62,9 @@ class CourseUserController extends AppBaseController
     {
         $input = $request->all();
         $input['user_account_id']=Auth::user()->id;
-        $courseUser = $this->courseUserRepository->create($input);
 
+        $courseUser = $this->courseUserRepository->create($input);
+        DB::table('courses')->where('id', $request->course_id)->increment('subscriber_count');
         Flash::success('Course User saved successfully.');
 
         return redirect(route('courseUsers.index'));

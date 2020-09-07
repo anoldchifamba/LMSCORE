@@ -9,7 +9,8 @@ use App\Models\Course;
 use App\Repositories\CommentRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
-use Flash;use Auth;
+use Flash;
+use Auth;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 
@@ -85,6 +86,7 @@ class CommentController extends AppBaseController
             return redirect(route('comments.index'));
         }
 
+
         return view('comments.show')->with('comment', $comment);
     }
 
@@ -104,8 +106,9 @@ class CommentController extends AppBaseController
 
             return redirect(route('comments.index'));
         }
-
-        return view('comments.edit')->with('comment', $comment);
+        $courses=Course::all();
+        $categories=Category::all();
+        return view('comments.edit')->with('comment', $comment)->with('courses',$courses)->with('categories',$categories);
     }
 
     /**

@@ -21,7 +21,7 @@ class Item extends Model
     use SoftDeletes;
 
     public $table = 'items';
-    
+
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 
@@ -59,8 +59,15 @@ class Item extends Model
      */
     public static $rules = [
         'course_id' => 'required',
-        'view_count' => 'required'
+        'view_count' => ''
     ];
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User');
+    }
+    public function course()
+    {
+        return $this->belongsTo('App\Models\Course');
+    }
 
-    
 }

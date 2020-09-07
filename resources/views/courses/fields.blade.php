@@ -52,7 +52,7 @@
 </div>
 
 <!-- About Instructor Field -->
-<div class="form-group col-sm-12 col-lg-6">
+<div class="form-group col-sm-12 col-lg-8">
     {!! Form::label('about_instructor', 'About Instructor:') !!}
     {!! Form::textarea('about_instructor', null, ['class' => 'form-control']) !!}
 </div>
@@ -62,7 +62,11 @@
     {!! Form::label('playlist_url', 'Playlist Url:') !!}
     {!! Form::text('playlist_url', null, ['class' => 'form-control']) !!}
 </div>
-
+<!-- Promo Video Url Field -->
+<div class="form-group col-sm-12 col-sm-6">
+    {!! Form::label('promo_video_url', 'Promo Video Url:') !!}
+    {!! Form::text('promo_video_url', null, ['class' => 'form-control']) !!}
+</div>
 <!-- Tags Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('tags', 'Tags:') !!}
@@ -70,16 +74,12 @@
 </div>
 
 <!-- Photo Field -->
-<div class="form-group col-sm-12 col-lg-8">
-    {!! Form::label('photo', 'Photo:') !!}
-    {!! Form::file('photo', ['class' => 'form-control']) !!}
+<div class="form-group col-sm-12 col-sm-6">
+    {!! Form::label('photo', 'Upload Course Photo:') !!}
+    {!! Form::file('photo',null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Promo Video Url Field -->
-<div class="form-group col-sm-12 col-lg-8">
-    {!! Form::label('promo_video_url', 'Promo Video Url:') !!}
-    {!! Form::text('promo_video_url', null, ['class' => 'form-control']) !!}
-</div>
+
 
 <!-- Creator Status Field -->
 {{--<div class="form-group col-sm-6">--}}
@@ -118,6 +118,20 @@
     {!! Form::textarea('requirements', null, ['class' => 'form-control']) !!}
 
 </div>
+<div class="form-group col-sm-12 col-sm-6">
+    {!! Form::label('course_calendar', 'Upload (image) Course Calendar:') !!}
+    {!! Form::file('course_calendar',null, ['class' => 'form-control']) !!}
+</div>
+<div class="form-group col-sm-12 col-sm-6">
+    {!! Form::label('course_outline', 'Upload (image) Course Outline:') !!}
+    {!! Form::file('course_outline',null, ['class' => 'form-control']) !!}
+</div>
+
+{{--<div class="form-group col-sm-12 col-sm-6">--}}
+{{--    {!! Form::label('course_iterms', 'Upload Course iterms (pdfs/word/excel):') !!}--}}
+{{--    <input type="file" name="file[]" multiple/>--}}
+{{--    {!! Form::file('course_iterms[]',null, ['class' => 'form-control']) !!}--}}
+{{--</div>--}}
 
 <!-- Discount Price Field -->
 <div class="form-group col-sm-6">
@@ -131,14 +145,16 @@
     {!! Form::number('actual_price', null, ['class' => 'form-control']) !!}
 </div>
 <!-- Actual Price Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('actual_price', 'Actual Price:') !!}
-    {!! Form::number('actual_price', null, ['class' => 'form-control']) !!}
-</div>
+{{--<div class="form-group col-sm-6">--}}
+{{--    {!! Form::label('actual_price', 'Actual Price:') !!}--}}
+{{--    {!! Form::number('actual_price', null, ['class' => 'form-control']) !!}--}}
+{{--</div>--}}
 <!-- View Count Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('paynow_url', 'Paynow link:') !!}
     {!! Form::text('paynow_url', null, ['class' => 'form-control']) !!}
+{{--    <input type="number" name="subscriber_count" value="" hidden>--}}
+{{--    <input type="number" name="viewer_count" value="" hidden>--}}
 </div>
 
 <!-- Subscriber Count Field -->

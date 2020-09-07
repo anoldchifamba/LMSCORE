@@ -13,10 +13,15 @@
         <tbody>
         @foreach($items as $item)
             <tr>
-                <td>{{ $item->user_id }}</td>
-            <td>{{ $item->course_id }}</td>
+                <td>{{ $item->user['name'] }}</td>
+            <td>{{ $item->course['title'] }}</td>
             <td>{{ $item->view_count }}</td>
-            <td>{{ $item->url }}</td>
+            <td>
+{{--                <a href="{{   asset('storage/course_iterms/'.$item->url) }}">Downolad</a>--}}
+
+                <a href="{{ route('download',$item->url) }}"><i class="fa fa-download"></i> Download </a>
+
+            </td>
             <td>{{ $item->description }}</td>
                 <td>
                     {!! Form::open(['route' => ['items.destroy', $item->id], 'method' => 'delete']) !!}

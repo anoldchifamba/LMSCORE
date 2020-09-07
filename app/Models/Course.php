@@ -65,7 +65,9 @@ class Course extends Model
         'actual_price',
         'paynow_url',
         'view_count',
-        'subscriber_count'
+        'subscriber_count',
+        'course_calendar',
+        'course_outline'
     ];
 
     /**
@@ -94,7 +96,9 @@ class Course extends Model
         'actual_price' => 'float',
         'paynow_url' => 'string',
         'view_count' => 'integer',
-        'subscriber_count' => 'integer'
+        'subscriber_count' => 'integer',
+        'course_calendar'=>'string',
+        'course_outline'=>'string'
     ];
 
     /**
@@ -116,6 +120,7 @@ class Course extends Model
         'paynow_url' => 'required',
         'view_count' => '',
         'subscriber_count' => ''
+
     ];
 
     /**

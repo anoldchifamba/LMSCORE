@@ -8,6 +8,9 @@ use App\Repositories\ItemRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
+use Auth;
+use App\Models\Course;
+use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
@@ -20,6 +23,10 @@ class ItemController extends AppBaseController
     public function __construct(ItemRepository $itemRepo)
     {
         $this->itemRepository = $itemRepo;
+    }
+    public function download($file){
+        $file_path = public_path('storage/course_iterms/'.$file);
+        return response()->download( $file_path);
     }
 
     /**
@@ -44,7 +51,9 @@ class ItemController extends AppBaseController
      */
     public function create()
     {
-        return view('items.create');
+        $courses=Course::all();
+        $users=User::all();
+        return view('items.create')->with('courses',$courses)->with('users',$users);
     }
 
     /**
@@ -57,8 +66,17 @@ class ItemController extends AppBaseController
     public function store(CreateItemRequest $request)
     {
         $input = $request->all();
+       $input['user_id']=Auth::user()->id;
+        $file = $request->file('url');
+        $file_len=count($file);
+        for($i=0;$i<$file_len;$i++){
+            $filename = $file[$i]->getClientOriginalName();
+            $file[$i]->storeAs('public/course_iterms', $filename);
+            $input['url'] = $filename;
 
-        $item = $this->itemRepository->create($input);
+            $item = $this->itemRepository->create($input);
+        }
+
 
         Flash::success('Item saved successfully.');
 
@@ -81,6 +99,7 @@ class ItemController extends AppBaseController
 
             return redirect(route('items.index'));
         }
+
 
 //        3  now we want to increment the viws when ever we refresh the page so we import facades  the it use the id ot identify
         DB::table('items')->where('id',$id)->increment('view_count');

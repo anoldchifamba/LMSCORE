@@ -25,6 +25,8 @@ class CreateCourseUserTable extends Migration
             $table->string('plan')->nullable();
             $table->double('pay_amount')->nullable();
 
+            $table->longText('token')->nullable();//php laravel;
+
             $table->tinyInteger('status')->default(0);
             $table->softDeletes();
             $table->timestamps();
