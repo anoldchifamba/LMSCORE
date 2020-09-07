@@ -65,8 +65,12 @@ class CommentController extends AppBaseController
         $comment = $this->commentRepository->create($input);
 
         Flash::success('Comment saved successfully.');
-
-        return redirect(route('comments.index'));
+        if(Auth::user()->role_id<3 ) {
+            return redirect(route('comments.index'));
+        }
+        else{
+            return redirect()->back();
+        }
     }
 
     /**

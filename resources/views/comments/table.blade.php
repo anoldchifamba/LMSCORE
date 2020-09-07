@@ -12,9 +12,9 @@
         <tbody>
         @foreach($comments as $comment)
             <tr>
-                <td>{{ $comment->user_id }}</td>
-            <td>{{ $comment->course_id }}</td>
-            <td>{{ $comment->category_id }}</td>
+                <td>{{ $comment->user['name'] }}</td>
+            <td>{{ $comment->course['title'] }}</td>
+            <td>{{ $comment->category['name'] }}</td>
             <td>{{ $comment->body }}</td>
                 <td>
                     {!! Form::open(['route' => ['comments.destroy', $comment->id], 'method' => 'delete']) !!}

@@ -79,11 +79,14 @@ if ( $remaining_hours>0) {
     $course_item = Item::where('course_id', $request->course_id)->get();
     $course_comments = Comment::where('course_id', $request->course_id)->get();
 
-    return view('courses.channel')->with('course_item',$course_item)->with('verifycouselinks',$verifycouselinks)->with('course_comments',$course_comments);
+    return view('courses.channel')->with('alert', 'successfull')
+        ->with('course_item',$course_item)
+        ->with('verifycouselinks',$verifycouselinks)
+        ->with('course_comments',$course_comments);
 }
 else{
-    Flash::success('Course subscription expired');
-    return redirect()->back();
+    Flash::success('');
+    return redirect()->back()->with('alert', 'Course subscription token expired!');
 }
 
 
@@ -93,7 +96,7 @@ else{
 
 
         Flash::success('Course unpublished successful');
-        return redirect()->back();
+        return redirect()->back()->with('alert', 'Course subscription token expired!');
     }
 
     public function index(Request $request)
