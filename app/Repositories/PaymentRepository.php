@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Repositories;
+namespace AT_academy\Repositories;
 
-use App\Models\Payment;
+use AT_academy\Models\Payment;
 use InfyOm\Generator\Common\BaseRepository;
 
 /**
  * Class PaymentRepository
- * @package App\Repositories
+ * @package AT_academy\Repositories
  * @version August 14, 2020, 1:19 pm UTC
  *
  * @method Payment findWithoutFail($id, $columns = ['*'])

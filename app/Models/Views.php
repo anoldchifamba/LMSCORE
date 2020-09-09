@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Models;
+namespace AT_academy\Models;
 
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class Views
- * @package App\Models
+ * @package AT_academy\Models
  * @version August 14, 2020, 1:21 pm UTC
  *
  * @property integer user_id

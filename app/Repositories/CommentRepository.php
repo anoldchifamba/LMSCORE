@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Repositories;
+namespace AT_academy\Repositories;
 
-use App\Models\Comment;
+use AT_academy\Models\Comment;
 use InfyOm\Generator\Common\BaseRepository;
 
 /**
  * Class CommentRepository
- * @package App\Repositories
+ * @package AT_academy\Repositories
  * @version August 14, 2020, 1:15 pm UTC
  *
  * @method Comment findWithoutFail($id, $columns = ['*'])

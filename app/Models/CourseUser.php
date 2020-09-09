@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Models;
+namespace AT_academy\Models;
 
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class CourseUser
- * @package App\Models
+ * @package AT_academy\Models
  * @version August 14, 2020, 1:17 pm UTC
  *
  * @property integer user_id
@@ -78,15 +78,15 @@ class CourseUser extends Model
     ];
     public function user()
     {
-        return $this->belongsTo('App\Models\User');
+        return $this->belongsTo('AT_academy\Models\User');
     }
     public function course()
     {
-        return $this->belongsTo('App\Models\Course');
+        return $this->belongsTo('AT_academy\Models\Course');
     }
     public function category()
     {
-        return $this->belongsTo('App\Models\Catergory');
+        return $this->belongsTo('AT_academy\Models\Catergory');
     }
 
 

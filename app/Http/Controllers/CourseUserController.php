@@ -1,16 +1,18 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace AT_academy\Http\Controllers;
 
-use App\Http\Requests\CreateCourseUserRequest;
-use App\Http\Requests\UpdateCourseUserRequest;
-use App\Models\Category;
-use App\Models\Course;
-use App\Repositories\CourseUserRepository;
-use App\Http\Controllers\AppBaseController;
-use App\User;
+use AT_academy\Http\Requests\CreateCourseUserRequest;
+use AT_academy\Http\Requests\UpdateCourseUserRequest;
+use AT_academy\Models\Category;
+use AT_academy\Models\Course;
+use AT_academy\Mail\OrderShipped;
+use AT_academy\Repositories\CourseUserRepository;
+use AT_academy\Http\Controllers\AppBaseController;
+use AT_academy\User;
 use Illuminate\Http\Request;
 use Flash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\DB;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;use Auth;
@@ -48,6 +50,10 @@ class CourseUserController extends AppBaseController
     public function create()
     {
         $categories=Category::all();$courses=Course::all();$users=User::all();
+
+
+
+
         return view('course_users.create')->with('categories',$categories)->with('courses',$courses)->with('users',$users);
     }
 
@@ -62,6 +68,19 @@ class CourseUserController extends AppBaseController
     {
         $input = $request->all();
         $input['user_account_id']=Auth::user()->id;
+//        $emails=User::where('id',$input['user_account_id'])->get();
+//        foreach ($emails as $email) {
+//
+//
+//        }
+
+       // $this->sendEmail('anoldchifamba@gmail.com','jhgfhfhgnf');
+
+        Mail::to('anoldchifamba@gmail.com')->send(new OrderShipped('fgsfdsfd'));
+
+
+
+
 
         $courseUser = $this->courseUserRepository->create($input);
         DB::table('courses')->where('id', $request->course_id)->increment('subscriber_count');
@@ -69,6 +88,8 @@ class CourseUserController extends AppBaseController
 
         return redirect(route('courseUsers.index'));
     }
+
+
 
     /**
      * Display the specified CourseUser.
@@ -91,6 +112,7 @@ class CourseUserController extends AppBaseController
 //        DB::table('course_user')->where('id',$id)->increment('view_count');
         return view('course_users.show')->with('courseUser', $courseUser);
     }
+
 
     /**
      * Show the form for editing the specified CourseUser.

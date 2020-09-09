@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Requests;
+namespace AT_academy\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use App\Models\Catergory;
+use AT_academy\Models\Catergory;
 
 class UpdateCatergoryRequest extends FormRequest
 {

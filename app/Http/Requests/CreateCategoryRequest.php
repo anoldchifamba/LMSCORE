@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Requests;
+namespace AT_academy\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use App\Models\Category;
+use AT_academy\Models\Category;
 
 class CreateCategoryRequest extends FormRequest
 {

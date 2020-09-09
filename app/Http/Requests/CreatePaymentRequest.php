@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Requests;
+namespace AT_academy\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use App\Models\Payment;
+use AT_academy\Models\Payment;
 
 class CreatePaymentRequest extends FormRequest
 {

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- Mirrored from www.topup.co.zw/uploaded/teacher2.svg by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 31 Aug 2020 14:26:53 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head runat="server"><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info = {"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"NRJS-7b2c00f444a92a1ba95","applicationID":"575932520","transactionName":"YlNbYxcDVkVXUkNQXVsZdGEmTXBZW1R0VlxBRFZbCQdKGVNDRVZA","queueTime":0,"applicationTime":4,"agent":"","atts":""}</script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-7b2c00f444a92a1ba95",applicationID:"575932520"};window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var i=n[t]={exports:{}};e[t][0].call(i.exports,function(n){var i=e[t][1][n];return r(i||n)},i,i.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(e,n,t){function r(){}function i(e,n,t){return function(){return o(e,[u.now()].concat(c(arguments)),n?null:this,t),n?void 0:this}}var o=e("handle"),a=e(5),c=e(6),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,n){s[n]=i(p+n,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,i="function"==typeof n;return o(l+"tracer",[u.now(),e,t],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=i(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){var t=e.getEntries();t.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,n){var t=e.getEntries();t.length>0&&d("lcp",[t[t.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var n=Math.round(e.timeStamp),t={type:e.type};n<=p.now()?t.fid=p.now()-n:n>p.offset&&n<=Date.now()?(n-=p.offset,t.fid=p.now()-n):n=p.now(),g=!0,d("timing",["fi",n,t])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(4),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,y=["click","keydown","mousedown","pointerdown","touchstart"];y.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],3:[function(e,n,t){function r(e,n){if(!i)return!1;if(e!==i)return!1;if(!n)return!0;if(!o)return!1;for(var t=o.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}n.exports={agent:i,version:o,match:r}},{}],4:[function(e,n,t){function r(e){function n(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,n,!1)}n.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],5:[function(e,n,t){function r(e,n){var t=[],r="",o=0;for(r in e)i.call(e,r)&&(t[o]=n(r,e[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],6:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,i=t-n||0,o=Array(i<0?0:i);++r<i;)o[r]=e[n+r];return o}n.exports=r},{}],7:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function i(e){function n(e){return e&&e instanceof r?e:e?f(e,c,o):o()}function t(t,r,i,o){if(!p.aborted||o){e&&e(t,r,i);for(var a=n(i),c=v(t),f=c.length,u=0;u<f;u++)c[u].apply(a,r);var d=s[w[t]];return d&&d.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return d[e]=d[e]||i(t)}function y(e,n){u(e,function(e,t){n=n||"feature",w[t]=n,n in s||(s[n]=[])})}var h={},w={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:y,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var c="nr@context",f=e("gos"),u=e(5),s={},d={},p=n.exports=i();p.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(i.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[n]=r,r}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){i.buffer([e],r),i.emit(e,n,t)}var i=e("ee").get("handle");n.exports=r,r.ee=i},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=E.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();u(w,function(n,t){e[n]||(e[n]=t)});var t=a();f("mark",["onload",t+E.offset],null,"api"),f("timing",["load",t]);var r=l.createElement("script");r.src="https://"+e.agent,n.parentNode.insertBefore(r,n)}}function i(){"complete"===l.readyState&&o()}function o(){f("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(c=Math.max((new Date).getTime(),c))-E.offset}var c=(new Date).getTime(),f=e("handle"),u=e(5),s=e("ee"),d=e(3),p=window,l=p.document,m="addEventListener",v="attachEvent",g=p.XMLHttpRequest,y=g&&g.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:g,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var h=""+location,w={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1177.min.js"},b=g&&y&&y[m]&&!/CriOS/.test(navigator.userAgent),E=n.exports={offset:c,now:a,origin:h,features:{},xhrWrappable:b,userAgent:d};e(1),e(2),l[m]?(l[m]("DOMContentLoaded",o,!1),p[m]("load",r,!1)):(l[v]("onreadystatechange",i),p[v]("onload",r)),f("mark",["firstbyte",c],null,"api");var x=0,O=e(7)},{}],"wrap-function":[function(e,n,t){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(6),a="nr@original",c=Object.prototype.hasOwnProperty,f=!1;n.exports=function(e,n){function t(e,n,t,i){function nrWrapper(){var r,a,c,f;try{a=this,r=o(arguments),c="function"==typeof t?t(r,a):t||{}}catch(u){p([u,"",[r,a,i],c])}s(n+"start",[r,a,i],c);try{return f=e.apply(a,r)}catch(d){throw s(n+"err",[r,a,d],c),d}finally{s(n+"end",[r,a,f],c)}}return r(e)?e:(n||(n=""),nrWrapper[a]=e,d(e,nrWrapper),nrWrapper)}function u(e,n,i,o){i||(i="");var a,c,f,u="-"===i.charAt(0);for(f=0;f<n.length;f++)c=n[f],a=e[c],r(a)||(e[c]=t(a,u?c+i:i,o,c))}function s(t,r,i){if(!f||n){var o=f;f=!0;try{e.emit(t,r,i,n)}catch(a){p([a,t,r,i])}f=o}}function d(e,n){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(e);return t.forEach(function(t){Object.defineProperty(n,t,{get:function(){return e[t]},set:function(n){return e[t]=n,n}})}),n}catch(r){p([r])}for(var i in e)c.call(e,i)&&(n[i]=e[i]);return n}function p(n){try{e.emit("internal-error",n)}catch(t){}}return e||(e=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>
+    <meta name="viewport" content="width=device-width" />
+
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="Paynow Topup" />
+    <meta name="apple-mobile-web-app-title" content="Paynow Topup" />
+    <meta name="theme-color" content="#185FF9" />
+    <meta name="msapplication-navbutton-color" content="#185FF9" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="msapplication-starturl" content="/" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="../manifest.json" />
+    <link rel="mask-icon" href="../assets/images/favicon/safari-pinned-tab.svg" color="#185FF9" />
+    <link rel="shortcut icon" href="../assets/images/favicon/favicon.ico" />
+    <meta name="msapplication-config" content="/assets/images/favicon/browserconfig.xml" />
+    <meta name="theme-color" content="#185FF9" />
+
+    <link href="../bundles/earlycssca38.css?v=2.34.2" rel="stylesheet"/>
+
+    <script src="../bundles/earlyjsca38?v=2.34.2"></script>
+
+
+    <title>Oops! Sorry...</title>
+
+
+
+        <meta property="fb:app_id" content="1588927414676800" />
+
+
+
+        <meta property="og:image" content="https://www.topup.co.zw/content/topup_og.png" />
+
+
+
+    <meta property="og:type" content="website" />
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-51417514-4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-51417514-4');
+</script>
+<style>
+.placeholder-1,
+.placeholder-2 {
+    width: 100%;
+    margin: 0 !important;
+}
+ins img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 25px auto;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px 0 rgba(41, 61, 102, .2);
+}
+.carousel {
+    position: relative;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px 0 rgba(41, 61, 102, .2);
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+ .carousel .item {
+    margin: 0px auto;
+}
+.carousel-indicators li {
+    background-color: rgb(24, 95, 249) !important;;
+}
+.carousel-control {
+background: transparent !important;
+}
+.carousel span[class*='glyphicon-chevron-']:before {
+    content: "";
+    display: block;
+    background: transparent;
+    width: 0;
+    height: 0;
+}
+span.glyphicon.glyphicon-chevron-right:before {
+    border-top: 16px solid transparent;
+    border-bottom: 16px solid transparent;
+    border-left: 16px solid #2666fa;
+}
+span.glyphicon.glyphicon-chevron-left:before {
+  border-top: 16px solid transparent;
+  border-bottom: 16px solid transparent; 
+  border-right: 16px solid #2666fa; 
+}
+</style>
+
+<!-- Facebook Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  '../../connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '251153395488628');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=251153395488628&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MWD6BWC');</script>
+<!-- End Google Tag Manager -->
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "legalName": "Webdev (Pvt) Ltd",
+        "foundingDate": "2015-03-20",
+        "email": "support@topup.co.zw",
+        "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Harare, Zimbabwe",
+        "streetAddress": "207 Josiah Tongogara Avenue"
+        },
+        "url": "https://www.topup.co.zw/",
+        "logo": "https://www.topup.co.zw/content/topup-logo-lg-xh.png",
+        "name": "Paynow Topup",
+        "telephone": "+2638677665463",
+        "vatID": "10013331"
+        }
+    </script>
+
+    
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+</head>
+
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MWD6BWC"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    <!-- STYLES HERE MUST BE INLINE SO THAT THE APPSHELL LOADS INSTANTLY -->
+
+<nav class="navbar navbar-default navbar-static-top">
+    <div class="container">
+        <div class="navbar-header" style="white-space: nowrap">
+            <button type="button" class="navbar-toggle profile" data-toggle="collapse" data-target=".profile-collapse" aria-label="My Profile Menu">
+                <i class="icon-profile"></i>
+            </button>
+                <button type="button" class="navbar-toggle currency" data-toggle="collapse" data-target=".currency-collapse" aria-label="Currency" style="margin-right: 0">
+                    USD
+                </button>
+            <div class="navbar-brand">
+                <a title="Navigate Back" href="#" onclick="window.history.back();" class="hidden-lg nav-back-button" id="back-button" aria-label="Navigate Back"><i class="icon-prev"></i></a>
+                <a title="Go To Homepage" class="site-logo" href="../index.html"><img src="../assets/images/logo/paynow/logo-default.svg" alt="Paynow Topup" /></a>
+            </div>
+            <div class="conn-status" style="display: none"></div>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a title="Choose Your Currency" href="#" class="dropdown-toggle currency" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">USD</a>
+                        <ul class="dropdown-menu currency">
+                                <li>
+        <a title="Choose ZWL currency" href="teacher2.html?returnurl=/uploaded/teacher2.svg" rel="nofollow">
+            ZWL 
+            <span id="fx-rate-ZWL" class="fx-rate label label-primary">FX: 1.0000</span>
+        </a>
+    </li>
+    <li>
+        <a title="Choose USD currency" href="teacher2.html?returnurl=/uploaded/teacher2.svg" rel="nofollow">
+            USD 
+            <span id="fx-rate-USD" class="fx-rate label label-primary">FX: 83.3994</span>
+        </a>
+    </li>
+<li>
+    <a title="Currency F.A.Q." href="https://blog.paynow.co.zw/currency-faq/" target="_blank">Currency F.A.Q.</a>
+</li>
+                        </ul>
+                    </li>
+                <li class="dropdown">
+                    <a title="My Account" href="#" class="dropdown-toggle profile" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="icon-profile"></i></a>
+                    <ul class="dropdown-menu profile">
+                        <li><a title="Manage My Profile" href="../user/login3c19.html" rel="nofollow">Manage My Profile</a></li>
+<li class="available-offline"><a title="Previously Purchased Vouchers" href="../my/vouchers.html" rel="nofollow">Purchased Vouchers</a></li>
+<li class="available-offline"><a title="Stored Account Details" href="../my/accounts.html" rel="nofollow">Stored Accounts</a></li>
+<li class="available-offline"><a title="Stored Payment Methods" href="../my/paymentmethods.html" rel="nofollow">Payment Methods</a></li>
+<li class="available-offline"><a title="Contacts" href="../my/contacts.html" rel="nofollow">Contacts</a></li>
+<li class="available-offline"><a title="Transaction History" href="../my/history.html" rel="nofollow">History</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="profile-collapse collapse">
+            <ul class="nav navbar-nav navbar-right profile">
+                <li><a title="Manage My Profile" href="../user/login3c19.html" rel="nofollow">Manage My Profile</a></li>
+<li class="available-offline"><a title="Previously Purchased Vouchers" href="../my/vouchers.html" rel="nofollow">Purchased Vouchers</a></li>
+<li class="available-offline"><a title="Stored Account Details" href="../my/accounts.html" rel="nofollow">Stored Accounts</a></li>
+<li class="available-offline"><a title="Stored Payment Methods" href="../my/paymentmethods.html" rel="nofollow">Payment Methods</a></li>
+<li class="available-offline"><a title="Contacts" href="../my/contacts.html" rel="nofollow">Contacts</a></li>
+<li class="available-offline"><a title="Transaction History" href="../my/history.html" rel="nofollow">History</a></li>
+            </ul>
+        </div>
+            <div class="currency-collapse collapse">
+                <ul class="nav navbar-nav navbar-right currency">
+                        <li>
+        <a title="Choose ZWL currency" href="teacher2.html?returnurl=/uploaded/teacher2.svg" rel="nofollow">
+            ZWL 
+            <span id="fx-rate-ZWL" class="fx-rate label label-primary">FX: 1.0000</span>
+        </a>
+    </li>
+    <li>
+        <a title="Choose USD currency" href="teacher2.html?returnurl=/uploaded/teacher2.svg" rel="nofollow">
+            USD 
+            <span id="fx-rate-USD" class="fx-rate label label-primary">FX: 83.3994</span>
+        </a>
+    </li>
+<li>
+    <a title="Currency F.A.Q." href="https://blog.paynow.co.zw/currency-faq/" target="_blank">Currency F.A.Q.</a>
+</li>
+                </ul>
+            </div>
+    </div>
+</nav>
+
+<script type="text/javascript">
+    // back button
+    if ('referrer' in document && document.referrer != null) {
+        if ((document.referrer || "").indexOf("../index.html") == 0)
+            document.getElementById("back-button").display = "inline-block";
+    }
+
+    function urlTokenEncode(str) {
+        var b64 = btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g,
+                function (match, p1) {
+                    return String.fromCharCode("0x" + p1);
+                })),
+            padChars = b64.match(/=/g);
+        return b64.replace(/=/g, "") + (padChars == null ? 0 : padChars.length);
+    }
+
+    $(function() {
+        var uat = Cookies.get("uat");
+        if (uat && uat.length > 0) {
+            $("ul.navbar-nav").not(".currency").prepend("<li class=\"available-offline\"><a rel=\"nofollow\" href=\"/user/logout\">Log Out</a></li>");
+            $("button.profile i, a.profile i").addClass("logged-in");
+        } else {
+            var online = (typeof (navigator.onLine) == "undefined" || navigator.onLine),
+                login = "/user/login?returnurl=" + (urlTokenEncode(location.href));
+            $("ul.navbar-nav").not(".currency").prepend("<li class=\"" + (online ? "" : "offline") + "\"><a rel=\"nofollow\" href=\"" + login + "#newuser\">Sign Up</a></li><li class=\"" + (online ? "" : "offline") + "\"><a rel=\"nofollow\" href=\"" + login + "\">Log In</a></li>");
+        }
+    });
+</script>
+
+    <script type="text/javascript">
+        // display exchange rates
+        $(function() {
+            $.getJSON("/home/rates",
+                function(response) {
+                    for (var i = 0; i < response.length; i++)
+                        $("span#fx-rate-" + response[i].code).text("FX: " + response[i].rate.toFixed(4));
+
+                    $(".fx-rate").show();
+                });
+        });
+    </script>
+
+<div class="alert-container">
+    <div class="alert alert-warning">
+        You are viewing products available in USD. <a href="teacher2.html?returnurl=/uploaded/teacher2.svg">Click here</a> to return to ZWL
+    </div>
+</div>
+
+    <noscript>
+        <p>
+            We're really sorry but, without Javascript (which your browser doesn't appear to support) none of the awesome features of topup.co.zw will be usable for you :(
+        </p>
+    </noscript>
+
+    <main class="container main">
+        
+
+
+<div class="row">
+    <div class="col-sm-5 col-sm-push-7 col-md-4 col-md-push-8">
+        <div class="customer-engagement-container clearfix">
+    <span class="text">We're available</span>
+        <a class="phone" title="Call us on +2638677665463" href="tel:+2638677665463"><span class="icon icon-phone"></span></a>
+    
+        <a class="chat" title="Live chat with us" href="https://tawk.to/chat/5a8fccf4d7591465c707f078/default/?$_tawk_popout=true&amp;$_tawk_sk=5a956b7ee192c53f2761bc8d&amp;$_tawk_tk=3c274a6c345a30510dc762bd55a121e1&amp;v=573" target="_blank" rel="noopener"><span class="icon icon-chat"></span></a>
+
+        <a class="email" title="E-mail us at support@topup.co.zw" href="mailto:support@topup.co.zw"><span class="icon icon-mail"></span></a>
+            <a class="whatsapp" title="WhatsApp us on 263719900809" href="https://api.whatsapp.com/send?phone=263719900809" target="_blank" rel="noopener"><span class="icon icon-whatsapp"></span></a>
+            <a class="facebook" title="Find us on Facebook" href="https://www.facebook.com/pg/paynowtopup" target="_blank" rel="noopener"><span class="icon icon-facebook"></span></a>
+    
+    <!-- NOT ENOUGH SPACE
+    <a class="twitter" style="vertical-align: text-bottom; margin-left: 4px;" title="Tweet Us" href="https://twitter.com/PaynowZW" target="_blank" rel="noopener">
+        <img alt="" src="/content/popel/twitter.svg" style="width: 22px; height: 22px; margin-top: -2px;" />
+    </a>-->
+</div>
+    </div>
+    <div class="col-sm-7 col-sm-pull-5 col-md-8 col-md-pull-4">
+        <h2>Oops! Sorry...</h2>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-8 col-md-6 col-lg-5">
+        <div class="info-box">
+            <p>
+                Sorry, there's been a problem. If this keeps happening, please contact our support team and let them know what you were trying to do when it happened. Our team of geeks will have it fixed in no time!
+            </p>
+            <p>
+                Please <a href="../index.html">return to the homepage</a> and try again.
+            </p>
+        </div>
+    </div>
+    
+    <div class="col-sm-4 col-md-6 col-lg-7 hidden-xs illustration">
+        <img src="../content/500.png" alt="An error has occurred" style="max-width: 485px" />
+    </div>
+</div>
+
+
+    </main>
+
+    <footer class="container">
+    <hr />
+    <ul class="nav navbar-nav">
+        <li>
+            <a title="Terms & Conditions" href="../legal/termsandconditions.html">Terms & Conditions</a>
+        </li>
+        <li>
+            <a title="Privacy Policy" href="../legal/privacypolicy.html">Privacy Policy</a>
+        </li>
+        <li>
+            <a title="Fraud Policy" href="../legal/fraudpolicy.html">Fraud Policy</a>
+        </li>
+        <li>
+            <a title="Refund Policy" href="../legal/refundpolicy.html">Refund Policy</a>
+        </li>
+        <li>
+            <a title="About Us" href="https://www.paynow.co.zw/home/aboutus">About Us</a>
+        </li>
+    </ul>
+</footer>
+
+    <script src="../bundles/latejsca38?v=2.34.2"></script>
+
+    <script src="../bundles/latejs2ca38?v=2.34.2"></script>
+
+
+    
+
+    <script type="text/javascript">
+        [].forEach.call(document.querySelectorAll('img[data-src]'),
+            function (img) {
+                img.setAttribute('src', img.getAttribute('data-src'));
+                img.onload = function () {
+                    img.removeAttribute('data-src');
+                };
+            });
+
+        $(function () {
+            MESSAGING.GetServerAlerts();
+            jQuery('.scrollable').scrollbar();
+            $('[data-toggle="tooltip"]').tooltip(); 
+        });
+    </script>
+    
+</body>
+
+<!-- Mirrored from www.topup.co.zw/uploaded/teacher2.svg by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 31 Aug 2020 14:26:59 GMT -->
+</html>

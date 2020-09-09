@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace AT_academy\Http\Controllers;
 
-use App\Http\Requests\CreatePaymentRequest;
-use App\Http\Requests\UpdatePaymentRequest;
-use App\Models\Category;
-use App\Models\Course;
-use App\Repositories\PaymentRepository;
-use App\Http\Controllers\AppBaseController;
-use App\User;
+use AT_academy\Http\Requests\CreatePaymentRequest;
+use AT_academy\Http\Requests\UpdatePaymentRequest;
+use AT_academy\Models\Category;
+use AT_academy\Models\Course;
+use AT_academy\Repositories\PaymentRepository;
+use AT_academy\Http\Controllers\AppBaseController;
+use AT_academy\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Flash;

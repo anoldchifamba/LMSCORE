@@ -29,6 +29,9 @@
     <!--End of Tawk.to Script-->
     <!-- FontAwesome CSS -->
     <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
+    <link href="bundles/earlycssca38.css?v=2.34.2" rel="stylesheet"/>
+
+    <script src="bundles/earlyjsca38?v=2.34.2"></script>
 
     <!-- ElegantFonts CSS -->
     <link rel="stylesheet" href="{{ asset('css/elegant-fonts.css') }}">
@@ -41,4 +44,5 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('style.css') }}">
+
 </head>

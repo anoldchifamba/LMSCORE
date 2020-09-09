@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace AT_academy\Http\Controllers;
 
-use App\Http\Requests\CreateRoleRequest;
-use App\Http\Requests\UpdateRoleRequest;
-use App\Repositories\RoleRepository;
-use App\Http\Controllers\AppBaseController;
+use AT_academy\Http\Requests\CreateRoleRequest;
+use AT_academy\Http\Requests\UpdateRoleRequest;
+use AT_academy\Repositories\RoleRepository;
+use AT_academy\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;

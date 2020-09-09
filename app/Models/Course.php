@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace AT_academy\Models;
 
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class Course
- * @package App\Models
+ * @package AT_academy\Models
  * @version August 17, 2020, 11:31 am UTC
  *
  * @property integer user_id
@@ -128,15 +128,15 @@ class Course extends Model
      */
     public function category()
     {
-        return $this->belongsTo('App\Models\Category');
+        return $this->belongsTo('AT_academy\Models\Category');
     }
     public function user()
     {
-        return $this->belongsTo('App\Models\User');
+        return $this->belongsTo('AT_academy\Models\User');
     }
     public function users()
 {
-    return $this->belongsToMany('App\Models\User')
+    return $this->belongsToMany('AT_academy\Models\User')
         ->withPivot('pay_amount','pay_date','expiry_date','token','created_at','user_account_id');
 //        ->with('category_id');
 }

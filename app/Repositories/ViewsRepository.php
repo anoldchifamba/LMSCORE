@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Repositories;
+namespace AT_academy\Repositories;
 
-use App\Models\Views;
+use AT_academy\Models\Views;
 use InfyOm\Generator\Common\BaseRepository;
 
 /**
  * Class ViewsRepository
- * @package App\Repositories
+ * @package AT_academy\Repositories
  * @version August 14, 2020, 1:21 pm UTC
  *
  * @method Views findWithoutFail($id, $columns = ['*'])

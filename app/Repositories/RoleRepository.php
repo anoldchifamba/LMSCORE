@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Repositories;
+namespace AT_academy\Repositories;
 
-use App\Models\Role;
+use AT_academy\Models\Role;
 use InfyOm\Generator\Common\BaseRepository;
 
 /**
  * Class RoleRepository
- * @package App\Repositories
+ * @package AT_academy\Repositories
  * @version August 14, 2020, 6:12 pm UTC
  *
  * @method Role findWithoutFail($id, $columns = ['*'])

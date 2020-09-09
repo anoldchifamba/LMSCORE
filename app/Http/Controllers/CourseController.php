@@ -1,19 +1,19 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace AT_academy\Http\Controllers;
 
-use App\Http\Controllers\AppBaseController;
-use App\Http\Requests\CreateCourseRequest;
-use App\Http\Requests\UpdateCourseRequest;
-use App\Models\Category;
-use App\Models\Comment;
-use App\Models\Course;
-use App\Models\CourseUser;
-use App\Models\Item;
+use AT_academy\Http\Controllers\AppBaseController;
+use AT_academy\Http\Requests\CreateCourseRequest;
+use AT_academy\Http\Requests\UpdateCourseRequest;
+use AT_academy\Models\Category;
+use AT_academy\Models\Comment;
+use AT_academy\Models\Course;
+use AT_academy\Models\CourseUser;
+use AT_academy\Models\Item;
 use Illuminate\Database\Eloquent\Model;
 
-use App\Repositories\CourseRepository;
-//use App\Http\Controllers\AppBaseController;
+use AT_academy\Repositories\CourseRepository;
+//use AT_academy\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Flash;

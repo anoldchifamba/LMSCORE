@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace AT_academy\Http\Controllers;
 
-use App\Http\Requests\CreateViewsRequest;
-use App\Http\Requests\UpdateViewsRequest;
-use App\Repositories\ViewsRepository;
-use App\Http\Controllers\AppBaseController;
+use AT_academy\Http\Requests\CreateViewsRequest;
+use AT_academy\Http\Requests\UpdateViewsRequest;
+use AT_academy\Repositories\ViewsRepository;
+use AT_academy\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;

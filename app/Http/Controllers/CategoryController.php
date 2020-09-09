@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace AT_academy\Http\Controllers;
 
-use App\Http\Requests\CreateCategoryRequest;
-use App\Http\Requests\UpdateCategoryRequest;
-use App\Models\Course;
-use App\Repositories\CategoryRepository;
-use App\Http\Controllers\AppBaseController;
+use AT_academy\Http\Requests\CreateCategoryRequest;
+use AT_academy\Http\Requests\UpdateCategoryRequest;
+use AT_academy\Models\Course;
+use AT_academy\Repositories\CategoryRepository;
+use AT_academy\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Illuminate\Support\Facades\DB;
@@ -136,8 +136,13 @@ class CategoryController extends AppBaseController
 
             return redirect(route('categories.index'));
         }
-
-        $category = $this->categoryRepository->update($request->all(), $id);
+        $input = $request->all();
+        
+        $file = $request->file('photo');
+        $filename = $file->getClientOriginalName();
+        $file->storeAs('public/category_image', $filename);
+        $input['photo'] = $filename;
+        $category = $this->categoryRepository->update($input, $id);
 
         Flash::success('Category updated successfully.');
 

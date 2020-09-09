@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace AT_academy\Http\Controllers;
 
-use App\Http\Requests\CreateItemRequest;
-use App\Http\Requests\UpdateItemRequest;
-use App\Repositories\ItemRepository;
-use App\Http\Controllers\AppBaseController;
+use AT_academy\Http\Requests\CreateItemRequest;
+use AT_academy\Http\Requests\UpdateItemRequest;
+use AT_academy\Repositories\ItemRepository;
+use AT_academy\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Auth;
-use App\Models\Course;
-use App\Models\User;
+use AT_academy\Models\Course;
+use AT_academy\Models\User;
 use Illuminate\Support\Facades\DB;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;

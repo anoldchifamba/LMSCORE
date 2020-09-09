@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Repositories;
+namespace AT_academy\Repositories;
 
-use App\Models\Catergory;
+use AT_academy\Models\Catergory;
 use InfyOm\Generator\Common\BaseRepository;
 
 /**
  * Class CatergoryRepository
- * @package App\Repositories
+ * @package AT_academy\Repositories
  * @version August 17, 2020, 12:30 pm UTC
  *
  * @method Catergory findWithoutFail($id, $columns = ['*'])

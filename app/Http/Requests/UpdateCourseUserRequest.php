@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Requests;
+namespace AT_academy\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use App\Models\CourseUser;
+use AT_academy\Models\CourseUser;
 
 class UpdateCourseUserRequest extends FormRequest
 {

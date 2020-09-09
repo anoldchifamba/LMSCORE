@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Models;
+namespace AT_academy\Models;
 
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class Coupon
- * @package App\Models
+ * @package AT_academy\Models
  * @version August 17, 2020, 12:11 pm UTC
  *
  * @property integer user_id

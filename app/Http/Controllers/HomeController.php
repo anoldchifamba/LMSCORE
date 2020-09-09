@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace AT_academy\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Category;
-use App\Models\Course;
+use AT_academy\Models\Category;
+use AT_academy\Models\Course;
 use Auth;
 class HomeController extends Controller
 {

@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Repositories;
+namespace AT_academy\Repositories;
 
-use App\Models\Item;
+use AT_academy\Models\Item;
 use InfyOm\Generator\Common\BaseRepository;
 
 /**
  * Class ItemRepository
- * @package App\Repositories
+ * @package AT_academy\Repositories
  * @version August 14, 2020, 1:19 pm UTC
  *
  * @method Item findWithoutFail($id, $columns = ['*'])

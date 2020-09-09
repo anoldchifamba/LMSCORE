@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Repositories;
+namespace AT_academy\Repositories;
 
-use App\Models\CourseUser;
+use AT_academy\Models\CourseUser;
 use InfyOm\Generator\Common\BaseRepository;
 
 /**
  * Class CourseUserRepository
- * @package App\Repositories
+ * @package AT_academy\Repositories
  * @version August 14, 2020, 1:17 pm UTC
  *
  * @method CourseUser findWithoutFail($id, $columns = ['*'])

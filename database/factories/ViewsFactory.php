@@ -2,7 +2,7 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\Models\Views;
+use AT_academy\Models\Views;
 use Faker\Generator as Faker;
 
 $factory->define(Views::class, function (Faker $faker) {

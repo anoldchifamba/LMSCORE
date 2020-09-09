@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Repositories;
+namespace AT_academy\Repositories;
 
-use App\Models\Coupon;
+use AT_academy\Models\Coupon;
 use InfyOm\Generator\Common\BaseRepository;
 
 /**
  * Class CouponRepository
- * @package App\Repositories
+ * @package AT_academy\Repositories
  * @version August 17, 2020, 12:11 pm UTC
  *
  * @method Coupon findWithoutFail($id, $columns = ['*'])
