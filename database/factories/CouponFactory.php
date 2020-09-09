@@ -2,7 +2,7 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use AT_academy\Models\Coupon;
+use App\Models\Coupon;
 use Faker\Generator as Faker;
 
 $factory->define(Coupon::class, function (Faker $faker) {

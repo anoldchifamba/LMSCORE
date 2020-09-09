@@ -1,13 +1,13 @@
 <?php
 
-namespace AT_academy\Models;
+namespace App\Models;
 
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class Coupon
- * @package AT_academy\Models
+ * @package App\Models
  * @version August 17, 2020, 12:11 pm UTC
  *
  * @property integer user_id
@@ -29,7 +29,7 @@ class Coupon extends Model
     use SoftDeletes;
 
     public $table = 'coupons';
-    
+
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 
@@ -92,5 +92,5 @@ class Coupon extends Model
         'total_available' => 'required'
     ];
 
-    
+
 }

@@ -1,9 +1,9 @@
 <?php
 
-namespace AT_academy\Http\Requests;
+namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use AT_academy\Models\Payment;
+use App\Models\Payment;
 
 class UpdatePaymentRequest extends FormRequest
 {
@@ -26,7 +26,7 @@ class UpdatePaymentRequest extends FormRequest
     public function rules()
     {
         $rules = Payment::$rules;
-        
+
         return $rules;
     }
 }

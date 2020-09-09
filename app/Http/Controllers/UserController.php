@@ -1,14 +1,14 @@
 <?php
 
-namespace AT_academy\Http\Controllers;
+namespace App\Http\Controllers;
 
-use AT_academy\Http\Requests\CreateUserRequest;
-use AT_academy\Http\Requests\UpdateUserRequest;
-use AT_academy\Models\Course;
-use AT_academy\Models\Payment;
-use AT_academy\Models\Role;
-use AT_academy\Repositories\UserRepository;
-use AT_academy\Http\Controllers\AppBaseController;
+use App\Http\Requests\CreateUserRequest;
+use App\Http\Requests\UpdateUserRequest;
+use App\Models\Course;
+use App\Models\Payment;
+use App\Models\Role;
+use App\Repositories\UserRepository;
+use App\Http\Controllers\AppBaseController;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Http\Request;
 use Auth;

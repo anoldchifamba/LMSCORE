@@ -10,11 +10,6 @@
         <div class="box box-primary">
             <div class="box-body">
                 <div class="row" style="padding-left: 20px">
-                    @if (session('alert'))
-                        <div class="alert alert-success">
-                            {{ session('alert') }}
-                        </div>
-                    @endif
                     @include('courses.show_fields')
                     <h3 class="text-center w-100">Subscriber</h3>
                     @include('users.table-user')

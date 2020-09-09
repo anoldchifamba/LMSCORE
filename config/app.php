@@ -154,11 +154,11 @@ return [
         /*
          * Application Service Providers...
          */
-        AT_academy\Providers\AppServiceProvider::class,
-        AT_academy\Providers\AuthServiceProvider::class,
-        // AT_academy\Providers\BroadcastServiceProvider::class,
-        AT_academy\Providers\EventServiceProvider::class,
-        AT_academy\Providers\RouteServiceProvider::class,
+        App\Providers\AppServiceProvider::class,
+        App\Providers\AuthServiceProvider::class,
+        // App\Providers\BroadcastServiceProvider::class,
+        App\Providers\EventServiceProvider::class,
+        App\Providers\RouteServiceProvider::class,
 Intervention\Image\ImageServiceProvider::class,
 
 

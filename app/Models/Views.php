@@ -1,13 +1,13 @@
 <?php
 
-namespace AT_academy\Models;
+namespace App\Models;
 
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class Views
- * @package AT_academy\Models
+ * @package App\Models
  * @version August 14, 2020, 1:21 pm UTC
  *
  * @property integer user_id
@@ -21,7 +21,7 @@ class Views extends Model
     use SoftDeletes;
 
     public $table = 'views';
-    
+
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 
@@ -62,5 +62,5 @@ class Views extends Model
         'course_id' => 'required'
     ];
 
-    
+
 }

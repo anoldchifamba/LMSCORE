@@ -1,9 +1,9 @@
 <?php
 
-namespace AT_academy\Http\Requests;
+namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use AT_academy\Models\Views;
+use App\Models\Views;
 
 class UpdateViewsRequest extends FormRequest
 {
@@ -26,7 +26,7 @@ class UpdateViewsRequest extends FormRequest
     public function rules()
     {
         $rules = Views::$rules;
-        
+
         return $rules;
     }
 }

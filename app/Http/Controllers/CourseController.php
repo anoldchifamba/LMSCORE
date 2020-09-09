@@ -1,19 +1,19 @@
 <?php
 
-namespace AT_academy\Http\Controllers;
+namespace App\Http\Controllers;
 
-use AT_academy\Http\Controllers\AppBaseController;
-use AT_academy\Http\Requests\CreateCourseRequest;
-use AT_academy\Http\Requests\UpdateCourseRequest;
-use AT_academy\Models\Category;
-use AT_academy\Models\Comment;
-use AT_academy\Models\Course;
-use AT_academy\Models\CourseUser;
-use AT_academy\Models\Item;
+use App\Http\Controllers\AppBaseController;
+use App\Http\Requests\CreateCourseRequest;
+use App\Http\Requests\UpdateCourseRequest;
+use App\Models\Category;
+use App\Models\Comment;
+use App\Models\Course;
+use App\Models\CourseUser;
+use App\Models\Item;
 use Illuminate\Database\Eloquent\Model;
 
-use AT_academy\Repositories\CourseRepository;
-//use AT_academy\Http\Controllers\AppBaseController;
+use App\Repositories\CourseRepository;
+//use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Flash;
@@ -79,14 +79,11 @@ if ( $remaining_hours>0) {
     $course_item = Item::where('course_id', $request->course_id)->get();
     $course_comments = Comment::where('course_id', $request->course_id)->get();
 
-    return view('courses.channel')->with('alert', 'successfull')
-        ->with('course_item',$course_item)
-        ->with('verifycouselinks',$verifycouselinks)
-        ->with('course_comments',$course_comments);
+    return view('courses.channel')->with('course_item',$course_item)->with('verifycouselinks',$verifycouselinks)->with('course_comments',$course_comments);
 }
 else{
-    Flash::success('');
-    return redirect()->back()->with('alert', 'Course subscription token expired!');
+    Flash::success('Course subscription expired');
+    return redirect()->back();
 }
 
 
@@ -96,7 +93,7 @@ else{
 
 
         Flash::success('Course unpublished successful');
-        return redirect()->back()->with('alert', 'Course subscription token expired!');
+        return redirect()->back();
     }
 
     public function index(Request $request)

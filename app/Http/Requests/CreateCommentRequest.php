@@ -1,9 +1,9 @@
 <?php
 
-namespace AT_academy\Http\Requests;
+namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use AT_academy\Models\Comment;
+use App\Models\Comment;
 
 class CreateCommentRequest extends FormRequest
 {

@@ -2,7 +2,7 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use AT_academy\Models\Catergory;
+use App\Models\Catergory;
 use Faker\Generator as Faker;
 
 $factory->define(Catergory::class, function (Faker $faker) {

@@ -1,13 +1,13 @@
 <?php
 
-namespace AT_academy\Models;
+namespace App\Models;
 
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class User
- * @package AT_academy\Models
+ * @package App\Models
  * @version August 14, 2020, 6:13 pm UTC
  *
  * @property string name
@@ -88,10 +88,10 @@ class User extends Model
 
     public function role()
     {
-        return $this->belongsTo('AT_academy\Models\Role');
+        return $this->belongsTo('App\Models\Role');
     }
     public function course()
     {
-        return $this->belongsToMany('AT_academy\Models\Course');
+        return $this->belongsToMany('App\Models\Course');
     }
 }

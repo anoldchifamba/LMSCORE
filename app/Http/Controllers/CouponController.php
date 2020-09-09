@@ -1,11 +1,11 @@
 <?php
 
-namespace AT_academy\Http\Controllers;
+namespace App\Http\Controllers;
 
-use AT_academy\Http\Requests\CreateCouponRequest;
-use AT_academy\Http\Requests\UpdateCouponRequest;
-use AT_academy\Repositories\CouponRepository;
-use AT_academy\Http\Controllers\AppBaseController;
+use App\Http\Requests\CreateCouponRequest;
+use App\Http\Requests\UpdateCouponRequest;
+use App\Repositories\CouponRepository;
+use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;

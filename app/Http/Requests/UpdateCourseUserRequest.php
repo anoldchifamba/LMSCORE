@@ -1,9 +1,9 @@
 <?php
 
-namespace AT_academy\Http\Requests;
+namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use AT_academy\Models\CourseUser;
+use App\Models\CourseUser;
 
 class UpdateCourseUserRequest extends FormRequest
 {
@@ -26,7 +26,7 @@ class UpdateCourseUserRequest extends FormRequest
     public function rules()
     {
         $rules = CourseUser::$rules;
-        
+
         return $rules;
     }
 }

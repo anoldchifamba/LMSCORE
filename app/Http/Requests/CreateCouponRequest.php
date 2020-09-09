@@ -1,9 +1,9 @@
 <?php
 
-namespace AT_academy\Http\Requests;
+namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use AT_academy\Models\Coupon;
+use App\Models\Coupon;
 
 class CreateCouponRequest extends FormRequest
 {

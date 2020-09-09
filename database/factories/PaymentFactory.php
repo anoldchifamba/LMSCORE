@@ -2,7 +2,7 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use AT_academy\Models\Payment;
+use App\Models\Payment;
 use Faker\Generator as Faker;
 
 $factory->define(Payment::class, function (Faker $faker) {

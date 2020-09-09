@@ -29,7 +29,7 @@
             "database/factories"
         ],
         "psr-4": {
-            "AT_academy\\": "app/"
+            "App\\": "app/"
         }
     },
     "autoload-dev": {

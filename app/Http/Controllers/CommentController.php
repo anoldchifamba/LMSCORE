@@ -1,13 +1,13 @@
 <?php
 
-namespace AT_academy\Http\Controllers;
+namespace App\Http\Controllers;
 
-use AT_academy\Http\Requests\CreateCommentRequest;
-use AT_academy\Http\Requests\UpdateCommentRequest;
-use AT_academy\Models\Category;
-use AT_academy\Models\Course;
-use AT_academy\Repositories\CommentRepository;
-use AT_academy\Http\Controllers\AppBaseController;
+use App\Http\Requests\CreateCommentRequest;
+use App\Http\Requests\UpdateCommentRequest;
+use App\Models\Category;
+use App\Models\Course;
+use App\Repositories\CommentRepository;
+use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Auth;
@@ -65,12 +65,8 @@ class CommentController extends AppBaseController
         $comment = $this->commentRepository->create($input);
 
         Flash::success('Comment saved successfully.');
-        if(Auth::user()->role_id<3 ) {
-            return redirect(route('comments.index'));
-        }
-        else{
-            return redirect()->back();
-        }
+
+        return redirect(route('comments.index'));
     }
 
     /**

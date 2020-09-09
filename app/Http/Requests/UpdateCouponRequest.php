@@ -1,9 +1,9 @@
 <?php
 
-namespace AT_academy\Http\Requests;
+namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use AT_academy\Models\Coupon;
+use App\Models\Coupon;
 
 class UpdateCouponRequest extends FormRequest
 {
@@ -26,7 +26,7 @@ class UpdateCouponRequest extends FormRequest
     public function rules()
     {
         $rules = Coupon::$rules;
-        
+
         return $rules;
     }
 }

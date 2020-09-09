@@ -31,25 +31,37 @@
 </section><!-- .courses-wrap -->
 
 
+<section  class="featured-courses vertical-column courses-wrap">
+    <div class="container">
+        <div class="row mx-m-25">
+            <div class="col-12 px-25">
+                <header style="margin-top: -7%;" class="heading flex flex-wrap justify-content-between align-items-center">
+                    <h4 class="entry-title">Featured Courses</h4>
+                    <nav class="courses-menu mt-3 mt-lg-0">
+                        <ul class="flex flex-wrap justify-content-md-end align-items-center">
+                            <li class="active"><a href="#">All</a></li>
+                            @foreach($categories as $category)
+                                <li> <a  href="/categories/{{ $category->id }}">{{ $category->name }}</a></li>
+                            @endforeach
+
+{{--                            <li><a href="#">Business</a></li>--}}
+{{--                            <li><a href="#">Design</a></li>--}}
+{{--                            <li><a href="#">Web Development</a></li>--}}
+{{--                            <li><a href="#">Photography</a></li>--}}
+                        </ul>
+                    </nav><!-- .courses-menu -->
+                </header><!-- .heading -->
+            </div><!-- .col -->
+
+            @include('layouts.course_display_data') <!-- include the footer bar -->
 
 
-
-<table class="table">
-
-    <tbody>
-    @foreach($categories as $category)
-    <tr>
-        <h2 style="margin-left:5px;">Top Courses in "<a  href="/categories/{{ $category->id }}">{{ $category->name }}</a>"</h2>
-          @include('layouts.indexrepair') <!-- include the footer bar -->
-
-
-    </tr>
-    @endforeach
-    </tbody>
-
-</table>
-
-
+            <div class="col-12 px-25 flex justify-content-center">
+                <a class="btn" href="{{ url('course') }}">view all courses</a>
+            </div><!-- .col -->
+        </div><!-- .row -->
+    </div><!-- .container -->
+</section><!-- .courses-wrap -->
 
 @include('layouts.client_log') <!-- include the footer bar -->
 

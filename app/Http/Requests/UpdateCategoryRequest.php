@@ -1,9 +1,9 @@
 <?php
 
-namespace AT_academy\Http\Requests;
+namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use AT_academy\Models\Category;
+use App\Models\Category;
 
 class UpdateCategoryRequest extends FormRequest
 {
@@ -26,7 +26,7 @@ class UpdateCategoryRequest extends FormRequest
     public function rules()
     {
         $rules = Category::$rules;
-        
+
         return $rules;
     }
 }
