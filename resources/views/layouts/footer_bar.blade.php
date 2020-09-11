@@ -5,8 +5,7 @@
             <div class="row">
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="foot-about">
-                        <a class="foot-logo" href="{{ url('index') }}"><img src="{{ asset('log/logo.png') }}" alt="" HEIGHT="30px" width="170px"></a>
-
+                        <h2>About Us</h2>
                         <p  align="justify">Our mission is to diversify the tech industry through accessible education and apprenticeship, unlocking the door to opportunity and empowering people to achieve their dreams. </p>
 
 

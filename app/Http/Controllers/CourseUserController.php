@@ -65,10 +65,11 @@ class CourseUserController extends AppBaseController
     {
         $input = $request->all();
         $input['user_account_id']=Auth::user()->id;
+        $expiry_date=$input['expiry_date'];
 $token=$input['token'];
         $user=User::where('id',$input['user_id'])->get();
         foreach ($user as $users) {
-            Mail::to($users->email)->send(new At_academy($token));
+            Mail::to($users->email)->send(new At_academy($token,$expiry_date));
         }
 
         $courseUser = $this->courseUserRepository->create($input);

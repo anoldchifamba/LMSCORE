@@ -18,8 +18,8 @@
                         <div class="header-bar-search">
                             <form class="flex align-items-stretch">
                                 <div class="dropdown">
-                                    <button style="background-color: white;" class="btn btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Filter by : Courses
+                                    <button style="background-color: white;" class="btn " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fa fa-certificate"></i> : Courses
                                     </button>
                                     <div  class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                         @foreach($courses as $course)
@@ -31,13 +31,13 @@
                                     </div>
                                 </div>
                                 <div class="dropdown" >
-                                    <button style="background-color: white;" class="btn btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Category
+                                    <button style="background-color: white;" class="btn " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fa fa-filter"></i> :  Categories
                                     </button>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                         @foreach($categories as $category)
                                             {{--                                            @if($category->id ==$course->category_id)--}}
-                                            <a class="dropdown-item" href="/courses/{{ $category->id }}
+                                            <a class="dropdown-item" href="/categories/{{ $category->id }}
                                                 ">{{ $category->name }}</a>
                                             {{--                                            @endif--}}
                                         @endforeach
@@ -52,12 +52,12 @@
                                 @if (Route::has('login'))
 
                                     @auth
-                                        <a href="{{ url('/home') }}">Home</a>
+                                        <a href="{{ url('/home') }} ">Home</a>
                                     @else
 
-                                        <li><a href="{{ route('login') }}">Login</a></li>
+                                        <li><a  class='fa fa-sign-in' href="{{ route('login') }}">Login</a></li>
                                         @if (Route::has('register'))
-                                            <li> <a href="{{ route('register') }}">Register</a></li>
+                                            <li> <a  class='fa fa-user-plus' href="{{ route('register') }}">Register</a></li>
                                         @endif
                                     @endauth
                                 @endif
