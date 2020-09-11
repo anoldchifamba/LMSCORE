@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateCourseUserRequest;
 use App\Http\Requests\UpdateCourseUserRequest;
+use App\Mail\At_academy;
 use App\Models\Category;
 use App\Models\Course;
 use App\Repositories\CourseUserRepository;
@@ -11,7 +12,9 @@ use App\Http\Controllers\AppBaseController;
 use App\User;
 use Illuminate\Http\Request;
 use Flash;
+use App\Mail\OrderShipped;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;use Auth;
 
@@ -19,7 +22,7 @@ class CourseUserController extends AppBaseController
 {
     /** @var  CourseUserRepository */
     private $courseUserRepository;
-
+    protected $token;
     public function __construct(CourseUserRepository $courseUserRepo)
     {
         $this->courseUserRepository = $courseUserRepo;
@@ -62,6 +65,11 @@ class CourseUserController extends AppBaseController
     {
         $input = $request->all();
         $input['user_account_id']=Auth::user()->id;
+$token=$input['token'];
+        $user=User::where('id',$input['user_id'])->get();
+        foreach ($user as $users) {
+            Mail::to($users->email)->send(new At_academy($token));
+        }
 
         $courseUser = $this->courseUserRepository->create($input);
         DB::table('courses')->where('id', $request->course_id)->increment('subscriber_count');

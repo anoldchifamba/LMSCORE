@@ -39,10 +39,10 @@
                     Instructor {{$course->user['name']}}
 
                     @if($course->subscriber_count >0)
-                        |Students :{{number_format($course->subscriber_count)}}
+                        |Students subscribed:{{number_format($course->subscriber_count)}}
                     @endif
                     @if($course->view_count >0)
-                        |Students :{{number_format($course->view_count)}}
+                        |Students viewed :{{number_format($course->view_count)}}
 
                     @endif
 
