@@ -1,9 +1,10 @@
 @component('mail::message')
 
-
+    Your Course id  {{ $courseid }}.
+    <br>
 Your Course token {{ $token }}.
 <br>
-Expiring on {{$expiry_date->format('h :i a - D d M Y')}}
+Expiring on {{$expiry_date}}
 
 
 Thanks,<br>

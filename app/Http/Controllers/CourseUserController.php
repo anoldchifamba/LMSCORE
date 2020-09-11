@@ -65,13 +65,18 @@ class CourseUserController extends AppBaseController
     {
         $input = $request->all();
         $input['user_account_id']=Auth::user()->id;
+        $courseid=$input['course_id'];
         $expiry_date=$input['expiry_date'];
 $token=$input['token'];
         $user=User::where('id',$input['user_id'])->get();
-        foreach ($user as $users) {
-            Mail::to($users->email)->send(new At_academy($token,$expiry_date));
-        }
+        $courseid=Course::where('id',$input['course_id'])->get();
+        foreach ($courseid as $course_id) {
+            $courseid=$course_id->title;
 
+        foreach ($user as $users) {
+            Mail::to($users->email)->send(new At_academy($token,$expiry_date,$courseid ));
+        }
+        }
         $courseUser = $this->courseUserRepository->create($input);
         DB::table('courses')->where('id', $request->course_id)->increment('subscriber_count');
         Flash::success('Course User saved successfully.');
