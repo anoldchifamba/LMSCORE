@@ -3,11 +3,101 @@
 {{--    {!! Form::label('id', 'Id:') !!}--}}
 {{--    <p>{{ $user->id }}</p>--}}
 {{--</div>--}}
+
+
+
+
+
+
+
+
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Become an instructor</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            {!! Form::open(['route' => ['users.become-instructor', $user->id], 'method' => 'post','enctype'=>'multipart/form-data']) !!}
+            <div class="modal-body">
+
+                <input type="hidden" value="{{$user->id}}" name="user_id"/>
+                <input type="hidden" value="{{$user->email}}" name="email"/>
+                {{--                <a class="btn btn-danger btn-xs">Click to Disapprove</a>--}}
+                <div class="form-group col-md-6 text-muted">
+                  {!! Form::label('', ' Cell:') !!}<br>
+                <input type="number" value="" name="cell" class="form-control-xs" required/><br>
+                </div>
+
+                <div class="form-group col-md-6 text-muted">
+                {!! Form::label('', 'Nationalid:') !!}<br>
+                    <input type="text" value="" name="id_number" class="form-control-xs" required/><br>
+                </div>
+                <div class="form-group col-md-6 text-muted">
+                    {!! Form::label('', 'Upload Satified Certificate:') !!}<br>
+                    {!! Form::file('certificate_photo',null, ['class' => 'form-control']) !!}<br>
+                </div>
+                <div class="form-group col-md-6 text-muted">
+                    {!! Form::label('', 'Upload Photo id:') !!}<br>
+                    {!! Form::file('photo_id',null, ['class' => 'form-control']) !!}<br>
+                </div>
+                <div class="form-group col-md-6 text-muted">
+                {!! Form::label('', 'Bank Account Name:') !!}<br>
+
+                <input type="text" value="" name="accountName" class="form-control-xs" required/><br>
+                </div>
+                <div class="form-group col-md-6 text-muted">
+                {!! Form::label('', 'Bank Account Number:') !!}<br>
+                <input type="number" value="" name="accountNumber" class="form-control-xs" required/><br>
+
+                </div>
+
+
+
+
+
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                {!! Form::button('Send your request', ['type' => 'submit', 'class' => 'btn btn-primary ']) !!}
+
+
+            </div>
+            {!! Form::close() !!}
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
 <!-- View Count Field -->
-<div class="form-group col-md-8 text-muted">
+<div class="form-group col-md-6 text-muted">
 {{--    {!! Form::label('view_count', ' Count:') !!}--}}
     <p>Profile viewed {{ $user->view_count }} times</p>
 </div>
+<div class="form-group col-md-6 text-muted">
+    {{--    {!! Form::label('view_count', ' Count:') !!}--}}
+    <a style="color:white;" class="btn badge-danger" type="button"  data-toggle="modal" data-target="#exampleModal">Become an instructor</a>
+</div>
+
+
+
+
+
+
 <!-- Name Field -->
 <div class="form-group col-md-6">
     {!! Form::label('name', 'Name:') !!}

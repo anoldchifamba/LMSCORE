@@ -32,7 +32,7 @@
     <![endif]-->
 
 </head>
-<body class="hold-transition login-page">
+<body class="hold-transition login-page" style="background-color: lightgreen;">
 <div class="login-box">
     <div class="login-logo">
         <a href="{{ url('index') }}"><b>AT </b>academy</a>

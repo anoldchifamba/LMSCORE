@@ -67,7 +67,7 @@
                 <div class="col-12 col-lg-6">
                     <div class="download-apps flex flex-wrap justify-content-center justify-content-lg-start align-items-center">
                         <a href="#"> <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                                 All rights reserved | Site created by <a href="index" >atacademy</a>
+                                 All rights reserved | Site created by <a href="index" >anold chifamba </a>
                                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></a>
                     </div><!-- .download-apps -->
 

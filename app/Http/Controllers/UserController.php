@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateUserRequest;
 use App\Http\Requests\UpdateUserRequest;
+use App\Mail\Instructor;
 use App\Models\Course;
 use App\Models\Payment;
 use App\Models\Role;
+use App\Models\User;
 use App\Repositories\UserRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -14,6 +16,7 @@ use Illuminate\Http\Request;
 use Auth;
 use Flash;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 
@@ -40,6 +43,38 @@ class UserController extends AppBaseController
 
         return view('users.index')
             ->with('users', $users);
+    }
+    public function UnpublishCourse(Request $request)
+    {
+        Course::where('id',$request->course_id)->update(['creator_status'=>0]);
+        Flash::success('Course unpublished successful');
+        return redirect()->back();
+    }
+    public function become_instructor(Request $request)
+    {
+
+        $file = $request->file('certificate_photo');
+        $filename = $file->getClientOriginalName();
+        $file->storeAs('public/certificate_photo', $filename);
+        $certificate_photo = $filename;
+
+        $file = $request->file('photo_id');
+        $filename = $file->getClientOriginalName();
+        $file->storeAs('public/profile', $filename);
+        $photo_id = $filename;
+          $email=$request->email;
+        Mail::to('anoldchifamba@gmail.com')->send(new Instructor($email ));
+
+
+        User::where('id',$request->user_id)->update(['cell'=>$request->cell,
+                                                     'id_number'=>$request->id_number,
+                                                     'certificate_photo'=>$certificate_photo,
+                                                     'photo_id'=>$photo_id ,
+                                                     'accountName'=>$request->accountName,
+                                                     'accountNumber'=>$request->accountNumber
+        ]);
+        Flash::success('Course unpublished successful');
+        return redirect()->back();
     }
 
     /**
