@@ -155,8 +155,10 @@
 
 <!-- Description Field -->
 <div class="form-group col-md-6">
-    {!! Form::label('description', 'Description:') !!}
-    <p>{{ $course->description }}</p>
+{{--    {!! Form::label('description', 'Description:') !!}--}}
+{{--    <p>{{ $course->description }}</p>--}}
+{{-- {!! Form::label('what_will_students_learn', 'Course Content:') !!}--}}
+<img class="card-img-top" width="250px" height="300px" src="{{  asset('storage/course_outline/'.$course->course_outline)}}" >
 </div>
 
 <!-- About Instructor Field -->

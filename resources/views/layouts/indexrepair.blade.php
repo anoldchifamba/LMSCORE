@@ -29,23 +29,22 @@
 
                         @foreach($courses as $course)
                             @if($category->id ==$course->category_id)
-                                <a href="/courses/{{ $course->id }}" title="{{  str_limit($course->title ,$limit=40 ,$end='...')}}" class="category" style="background-image: linear-gradient(to bottom,white, white); width: 180px;height: 220px;">
+                                <a href="{{ url('/courses/'.$course->id) }}" title="{{  str_limit($course->title ,$limit=40 ,$end='...')}}" class="category" style="background-image: linear-gradient(to bottom,white, white); width: 180px;height: 220px;">
                                     <div class="icon-container" sstyle="height: 800%;" >
                                         <img src="{{  asset('storage/course_image/'.$course->photo)}}" alt="{{  str_limit($course->title ,$limit=40 ,$end='...')}}"  style="height: 100%; width:100%; border-radius: 5px; "/>
                                         <br>
                                         <span class="text-muted" style="font-size: 12px;"><i class="fas fa-title"></i>{{  str_limit($course->title ,$limit=40 ,$end='...')}} </span><br>
                                         <span class="text-muted" style="font-size: 10px;"><i class="fa fa-user"></i> {{ $course->user['name'] }}</span><br>
-                                        <small class="text-muted  " style="font-size: 8px;">Posted on {{ $course->created_at->format('h :i a - D d M Y') }}</small><br>
+{{--                                        <small class="text-muted  " style="font-size: 8px;">Posted on {{ $course->created_at->format('h :i a - D d M Y') }}</small><br>--}}
                                         <span class="fa fa-star checked" style="font-size: 8px;"></span>
                                         <span class="fa fa-star checked" style="font-size: 8px;"></span>
                                         <span class="fa fa-star checked"style="font-size: 8px;"></span>
                                         <span class="fa fa-star checked"style="font-size: 8px;"></span>
                                         <span class="fa fa-star-o"style="font-size: 8px;">({{  $course->view_count }})</span>
-                                        <br>
-                                        <span class="text-muted" style="font-size: 8px;">Views :({{  $course->view_count }})</span>
-                                        <br>
-                                        <div class="btn btn-warning btn-xs align-items-center" >
-                                            By Course:     $  {{  $course->discount_price }}<small class="text-muted"> <strike> $  {{  $course->actual_price }} </strike></small>
+                                       <br>
+                                        $  {{  $course->discount_price }}<br>
+                                        <div class="btn btn-danger btn-xs align-items-center" >
+                                            Bestseller
                                         </div><!-- .course-cost --><br>
 
                                     </div>
