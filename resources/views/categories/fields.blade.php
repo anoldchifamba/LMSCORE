@@ -19,7 +19,9 @@
 <!-- Photo Field -->
 <div class="form-group col-sm-12 col-sm-6">
     {!! Form::label('photo', 'Photo:') !!}
-    {!! Form::file('photo', null, ['class' => 'form-control']) !!}
+{{--    {!! Form::file('photo', null, ['class' => 'form-control']) !!}--}}
+    <input type="file" id="photo" name="photo"  required>
+
 </div>
 
 <!-- Submit Field -->

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AT academy</title>
+    <title>Atacademy</title>
 
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -32,10 +32,10 @@
     <![endif]-->
 
 </head>
-<body class="hold-transition login-page" style="background-color: lightgreen;">
+<body class="hold-transition login-page" style="">
 <div class="login-box">
     <div class="login-logo">
-        <a href="{{ url('index') }}"><b>AT </b>academy</a>
+        <a href="{{ url('index') }}"><b>Atacademy</a>
     </div>
 
     <!-- /.login-logo -->

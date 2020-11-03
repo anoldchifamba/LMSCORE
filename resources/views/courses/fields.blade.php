@@ -76,7 +76,9 @@
 <!-- Photo Field -->
 <div class="form-group col-sm-12 col-sm-6">
     {!! Form::label('photo', 'Upload Course Photo:') !!}
-    {!! Form::file('photo',null, ['class' => 'form-control']) !!}
+{{--    {!! Form::file('photo',null, ['class' => 'form-control']) !!}--}}
+    <input type="file" id="photo" name="photo" accept="image/png, image/jpeg" required>
+
 </div>
 
 
@@ -118,14 +120,19 @@
     {!! Form::textarea('requirements', null, ['class' => 'form-control']) !!}
 
 </div>
-<div class="form-group col-sm-12 col-sm-6">
-    {!! Form::label('course_calendar', 'Upload (image) Course Calendar:') !!}
-    {!! Form::file('course_calendar',null, ['class' => 'form-control']) !!}
-</div>
-<div class="form-group col-sm-12 col-sm-6">
-    {!! Form::label('course_outline', 'Upload (image) Course Outline:') !!}
-    {!! Form::file('course_outline',null, ['class' => 'form-control']) !!}
-</div>
+{{--<div class="form-group col-sm-12 col-sm-6">--}}
+{{--    {!! Form::label('course_calendar', 'Upload (image) Course Calendar:') !!}--}}
+{{--    {!! Form::file('course_calendar',null, ['class' => 'form-control']) !!}--}}
+{{--    <input type="file" id="course_calendar" name="course_calendar" accept="image/png, image/jpeg" required>--}}
+
+{{--</div>--}}
+{{--<div class="form-group col-sm-12 col-sm-6">--}}
+{{--    {!! Form::label('course_outline', 'Upload (image) Course Outline:') !!}--}}
+{{--    {!! Form::file('course_outline',null, ['class' => 'form-control']) !!}--}}
+{{--    <input type="file" id="course_outline" name="course_outline" accept="image/png, image/jpeg" required>--}}
+
+
+{{--</div>--}}
 
 {{--<div class="form-group col-sm-12 col-sm-6">--}}
 {{--    {!! Form::label('course_iterms', 'Upload Course iterms (pdfs/word/excel):') !!}--}}

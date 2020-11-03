@@ -42,11 +42,15 @@
                 </div>
                 <div class="form-group col-md-6 text-muted">
                     {!! Form::label('', 'Upload Satified Certificate:') !!}<br>
-                    {!! Form::file('certificate_photo',null, ['class' => 'form-control']) !!}<br>
+{{--                    {!! Form::file('certificate_photo',null , ['class' => 'form-control']) !!}--}}
+                    <input type="file" id="certificate_photo" name="certificate_photo" accept="image/png, image/jpeg" required>
+                    <br>
                 </div>
                 <div class="form-group col-md-6 text-muted">
                     {!! Form::label('', 'Upload Photo id:') !!}<br>
-                    {!! Form::file('photo_id',null, ['class' => 'form-control']) !!}<br>
+{{--                    {!! Form::file('photo_id',required, ['class' => 'form-control']) !!}--}}
+                    <input type="file" id="photo_id" name="photo_id" accept="image/png, image/jpeg" required>
+                    <br>
                 </div>
                 <div class="form-group col-md-6 text-muted">
                 {!! Form::label('', 'Bank Account Name:') !!}<br>
@@ -182,9 +186,32 @@
     <!--  Field can be viewd by the adminstrator -->
     <!-- Is Subscribed Field -->
     <div class="form-group col-md-6">
+        {!! Form::label('is_subscribed', 'Certificate:') !!}<br>
+        @if($user->certificate_photo=='')
+        <img src="{{  asset('storage/certificate_photo/'.$user->certificate_photo)}}" height="90px" width="180px">
+        @endif
+    </div>
+
+
+
+    <div class="form-group col-md-6">
+        {!! Form::label('is_subscribed', 'profile image:') !!}<br>
+        @if($user->photo_id=='')
+        <img src="{{  asset('storage/profile/'.$user->photo_id)}}" height="90px" width="180px">
+        @endif
+    </div>
+
+    <div class="form-group col-md-6">
+        {!! Form::label('is_subscribed', 'National id:') !!}
+        <p>{{ $user->id_number }}</p>
+    </div>
+
+    <div class="form-group col-md-6">
         {!! Form::label('is_subscribed', 'Is Subscribed:') !!}
         <p>{{ $user->is_subscribed }}</p>
     </div>
+
+
 
     <!-- Email Verified At Field -->
     <div class="form-group col-md-6">

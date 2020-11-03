@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Course;
+use App\Models\User;
 use Auth;
 class HomeController extends Controller
 {
@@ -35,8 +36,8 @@ class HomeController extends Controller
         }
         $categories = Category::all();
         $courses = Course::all();
-
-        return view('index')->with('courses',$courses)->with('categories', $categories);
+        $users = User::all();
+        return view('index')->with('courses',$courses)->with('categories', $categories)->with('users', $users);
     }
     public function home(){
 
@@ -45,8 +46,8 @@ class HomeController extends Controller
         }
         $categories = Category::all();
         $courses = Course::all();
-
-        return view('index')->with('courses',$courses)->with('categories', $categories);
+        $users = User::all();
+        return view('index')->with('courses',$courses)->with('categories', $categories)->with('users', $users);
     }
     public function contact(){
 

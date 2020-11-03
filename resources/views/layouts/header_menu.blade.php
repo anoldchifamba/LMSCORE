@@ -24,7 +24,7 @@
                                     <div  class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                         @foreach($courses as $course)
                                             {{--                                            @if($category->id ==$course->category_id)--}}
-                                            <a class="dropdown-item" href="/courses/{{ $course->id }}
+                                            <a class="dropdown-item" href="{{ url('/courses/'.$course->id) }}
                                                 ">{{ $course->title }}</a>
                                             {{--                                            @endif--}}
                                         @endforeach
@@ -37,7 +37,7 @@
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                         @foreach($categories as $category)
                                             {{--                                            @if($category->id ==$course->category_id)--}}
-                                            <a class="dropdown-item" href="/categories/{{ $category->id }}
+                                            <a class="dropdown-item" href="{{ url('/categories/'.$category->id) }}
                                                 ">{{ $category->name }}</a>
                                             {{--                                            @endif--}}
                                         @endforeach
@@ -90,7 +90,7 @@
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                         @foreach($courses as $course)
                                             @if($category->id ==$course->category_id)
-                                                <a class="dropdown-item" href="/courses/{{ $course->id }}
+                                                <a class="dropdown-item" href="{{ url('/courses/'.$course->id) }}
                                                     ">{{ $course->title }}</a>
                                             @endif
                                         @endforeach

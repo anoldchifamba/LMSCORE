@@ -36,8 +36,8 @@
 
 
         @foreach($categories as $category)
-            <div class="card"  >
-                <img class="card-img-top" src="{{  asset('storage/category_image/'.$category->photo)}}" >
+            <div class="card" style="width:25rem;" >
+                <img class="card-img-top" style="width: 18rem;height: 20rem;"  src="{{  asset('storage/category_image/'.$category->photo)}}" >
                 <div class="card-body">
                     <h5 class="card-title">{{ $category->name }}</h5>
                     <p class="card-text">{{ str_limit($category->description ,$limit=20 ,$end='...')}}</p>

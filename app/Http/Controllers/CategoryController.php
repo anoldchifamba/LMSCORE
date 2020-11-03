@@ -136,8 +136,13 @@ class CategoryController extends AppBaseController
 
             return redirect(route('categories.index'));
         }
+        $input = $request->all();
+        $file = $request->file('photo');
+        $filename = $file->getClientOriginalName();
+        $file->storeAs('public/category_image', $filename);
+        $input['photo'] = $filename;
 
-        $category = $this->categoryRepository->update($request->all(), $id);
+        $category = $this->categoryRepository->update($input, $id);
 
         Flash::success('Category updated successfully.');
 

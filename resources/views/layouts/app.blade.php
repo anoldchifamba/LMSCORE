@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>At academy</title>
+    <link rel="shortcut icon" href="../uploads/images/logo/liveonlineacademy/logoicon.png" type="image/x-icon">
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- Bootstrap 3.3.7 -->
@@ -37,7 +38,7 @@
 
             <!-- Logo -->
             <a href="#" class="logo">
-                <b>At academy</b>
+                <b>Atacademy</b>
             </a>
 
             <!-- Header Navbar -->
@@ -54,17 +55,27 @@
                             <!-- Menu Toggle Button -->
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <!-- The user image in the navbar-->
-                                <img src="{{ asset('log/headericon.jpeg') }}"
-                                     class="user-image" alt="User Image"/>
+{{--                                <img src="{{ asset('log/headericon.jpeg') }}"--}}
+{{--                                     class="user-image" alt="User Image"/>--}}
+                                @if(Auth::user()->photo_id=='')
+                                <img src="{{  asset('storage/profile/'.Auth::user()->photo_id)}}"  class="user-image">
+                                @else
+                                    <img src="{{ asset('log/headericon.jpeg') }}"class="user-image" alt="User Image"/>
+                            @endif
                                 <!-- hidden-xs hides the username on small devices so only the image appears. -->
                                 <span class="hidden-xs">{{ Auth::user()->name }}</span>
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- The user image in the menu -->
                                 <li class="user-header">
-                                    <img src="{{ asset('log/headericon.jpeg') }}"
-                                         class="img-circle" alt="User Image"/>
-                                    <p>
+{{--                                    <img src="{{ asset('log/headericon.jpeg') }}"--}}
+{{--                                         class="img-circle" alt="User Image"/>--}}
+                                    @if(Auth::user()->photo_id=='')
+                                    <img src="{{  asset('storage/profile/'.Auth::user()->photo_id)}}"  class="img-circle">
+                                    @else
+                                        <img src="{{ asset('log/headericon.jpeg') }}"class="img-circle" alt="User Image"/>
+                                    @endif
+                                        <p>
                                         {{ Auth::user()->name }}
                                         <small>Member since {{ Auth::user()->created_at->format('M. Y') }}</small>
                                     </p>

@@ -6,6 +6,10 @@
 <li class="{{ Request::is('courses*') ? 'active' : '' }}">
     <a href="{{ route('courses.index') }}"><i class="fa fa-certificate"></i><span>Courses List</span></a>
 </li>
+<li >
+    <a href="/users/{{ Auth::user()->id}} "  ><i class="fa fa-certificate"></i><span>Become an instructor
+</span></a>
+</li>
 
 
 {{--<li class="{{ Request::is('payments*') ? 'active' : '' }}">--}}
@@ -64,3 +68,4 @@
 </li>
 
 @endif
+p

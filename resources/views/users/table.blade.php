@@ -4,9 +4,11 @@
             <tr>
                 <th>Name</th>
         <th>Email</th>
-{{--        <th>First Name</th>--}}
+
+        <th>Cell</th>
+
 {{--        <th>Last Name</th>--}}
-        <th>Gender</th>
+        <th>Bank Acc</th>
 {{--        <th>Date Of Birth</th>--}}
         <th>Is Subscribed</th>
         <th>Email Verified At</th>
@@ -23,8 +25,8 @@
                 <td>{{ $user->name }}</td>
             <td><a href="{{ route('users.show', [$user->id]) }}" class=''>{{ $user->email }}</a></td>
 {{--            <td>{{ $user->first_name }}</td>--}}
-{{--            <td>{{ $user->last_name }}</td>--}}
-            <td>{{ $user->gender }}</td>
+            <td>{{ $user->cell }}</td>
+            <td>{{ $user->accountNumber }}</td>
 {{--            <td>{{ $user->date_of_birth }}</td>--}}
             <td>{{ $user->is_subscribed }}</td>
             <td>{{ $user->email_verified_at }}</td>

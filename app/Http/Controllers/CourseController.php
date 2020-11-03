@@ -130,10 +130,10 @@ else{
         $input['user_id']=Auth::user()->id;
         $input['view_count']=0;
             $input['viewer_count']=0;
-        $file = $request->file('course_outline');
-        $filename = $file->getClientOriginalName();
-        $file->storeAs('public/course_outline', $filename);
-        $input['course_outline'] = $filename;
+//        $file = $request->file('course_outline');
+//        $filename = $file->getClientOriginalName();
+//        $file->storeAs('public/course_outline', $filename);
+//        $input['course_outline'] = $filename;
 
 
 
@@ -144,10 +144,10 @@ else{
 //        $input['photo']=$request->file('photo')->storeAs('public', $filename);
 //        $request->file('photo') ->store('public/course_image');
 
-        $file = $request->file('course_calendar');
-        $filename = $file->getClientOriginalName();
-        $file->storeAs('public/course_calendar', $filename);
-        $input['course_calendar'] = $filename;
+//        $file = $request->file('course_calendar');
+//        $filename = $file->getClientOriginalName();
+//        $file->storeAs('public/course_calendar', $filename);
+//        $input['course_calendar'] = $filename;
 
         $input['subscriber_count']=$input['viewer_count'] = 0;
 
@@ -232,10 +232,10 @@ else{
         }
         $input = $request->all();
 
-        $file = $request->file('course_outline');
-        $filename = $file->getClientOriginalName();
-        $file->storeAs('public/course_outline', $filename);
-        $input['course_outline'] = $filename;
+//        $file = $request->file('course_outline');
+//        $filename = $file->getClientOriginalName();
+//        $file->storeAs('public/course_outline', $filename);
+//        $input['course_outline'] = $filename;
 
 
         $file = $request->file('photo');
@@ -243,10 +243,10 @@ else{
         $file->storeAs('public/course_image', $filename);
         $input['photo'] = $filename;
 
-        $file = $request->file('course_calendar');
-        $filename = $file->getClientOriginalName();
-        $file->storeAs('public/course_calendar', $filename);
-        $input['course_calendar'] = $filename;
+//        $file = $request->file('course_calendar');
+//        $filename = $file->getClientOriginalName();
+//        $file->storeAs('public/course_calendar', $filename);
+//        $input['course_calendar'] = $filename;
 
 
 
